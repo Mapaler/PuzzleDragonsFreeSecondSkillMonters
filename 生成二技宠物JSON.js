@@ -184,24 +184,22 @@ var monsterList = [
 		3340, //水柱的護衛神・姆特
 		3342, //地柱的護衛神・孔斯
 	]},
-	{group:"MP商店：期间限定商品",ids:[
+	{group:"MP商店：普通期间限定商品",ids:[
 		3782, //木之宮孝男
 		3865, //木之宮孝男
 		4017, //星馬烈
 		4018, //星馬豪
 	]},
-	{group:"MP商店：本家变装桶，期间限定商品（不全）",ids:[
+	{group:"MP商店：本家特别版角色，期间限定商品（不全）",ids:[
+		2290, //雪白的美公主・女武神葛雷婭
 		2407, //古城的女主神・迦梨
 		3222, //紅蘭之黑魔女・尚美
 		2512, //聖夜的赤龍喚士・索妮亞
 		2533, //遊山的天舞神・天照大神
 		2813, //輕音部的麒麟姬・朔夜
-		2290, //雪白的美公主・女武神葛雷婭
 		2950, //疾走的新郎・赤龍契士 加狄烏斯
 	]},
-	{group:"MP商店：第三方合作桶，期间限定商品（不全）",ids:[
-		3167, //蒼藍團長多吉龍劍
-		2569, //翠輝星的麒麟・朔夜 Another
+	{group:"MP商店：怪物猎人合作，期间限定商品",ids:[
 		3705, //猎人♂・雄火龙X装备
 		3706, //猎人♂・泡狐龙X装备
 		3707, //猎人♂・鏖魔装备
@@ -212,6 +210,10 @@ var monsterList = [
 		3711, //猎人♀・斩龙X装备
 		4173, //猎人♀・冰牙龙X装备
 		4174, //猎人♀・风漂龙X装备
+	]},
+	{group:"MP商店：第三方合作，期间限定商品（不全）",ids:[
+		3167, //蒼藍團長多吉龍劍
+		2569, //翠輝星的麒麟・朔夜 Another
 	]},
 ];
 
@@ -400,5 +402,7 @@ var monsterDataList = []; //储存获取后转换的数据
 
 getGroup(monsterList,monsterDataList,function(){
 	console.log("处理完毕",monsterDataList);
-	console.log(JSON.stringify(monsterDataList));
+	var jtxt = JSON.stringify(monsterDataList);
+	//jtxt=jtxt.replace(/"(id|name|mosters|skill|CDlong|CDshort|levelMax|text|type|src|icon|awokens)"/igm,"$1");
+	console.log(jtxt);
 })

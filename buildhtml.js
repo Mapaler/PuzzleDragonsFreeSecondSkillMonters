@@ -42,6 +42,18 @@ function buildHTML(response)
 			cellId.appendChild(document.createTextNode("No."+mon.id));
 			var cellName = row2.insertCell();
 			cellName.className = "name";
+			switch(mon.id)
+			{
+				case 1098:
+					mon.name = "试练刚神・海克力斯";
+					break;
+				case 3834:
+					mon.name = "空都的守护神・雅典娜＝赫利奥斯";
+					break;
+				case 3193:
+					mon.name = "帝都之守护神・雅典娜";
+					break;
+			}
 			cellName.appendChild(document.createTextNode(mon.name));
 			var cellSkillName = row1.insertCell();
 			cellSkillName.className = "skill-name";
@@ -131,14 +143,14 @@ function buildHTML(response)
 			})
 			var cellJX = row1.insertCell();
 			cellJX.className = "jx";
-			var wepon = mon.jx.some(function(jx){
-				return jx == awokens[48].icon; //武器觉醒
+			var wepon = mon.awokens.some(function(awoken){
+				return awoken == 48; //武器觉醒
 			})
 			if (wepon)
 			{
-				mon.jx.forEach(function(jx){
+				mon.awokens.forEach(function(awoken){
 					var jxicon = cellJX.appendChild(document.createElement("img"));
-					jxicon.src = jx;
+					jxicon.src = awokens[awoken].icon;
 				})
 			}
 		})
