@@ -48,15 +48,14 @@ function buildNGACode(response)
 			);
 	
 			var jxUBB = [];
-			var wepon = mon.jx.some(function(jx){
-				return jx == awokens[48].icon; //武器觉醒
+			var wepon = mon.awokens.some(function(awoken){
+				return awoken == 48; //武器觉醒
 			})
 			if (wepon)
 			{
-				mon.jx.forEach(function(jx){
-					jxUBB.push("[img]" + jx + "[/img]");
+				mon.awokens.forEach(function(awoken){
+					jxUBB.push("[img]" + awokens[awoken].icon + "[/img]");
 				})
-				
 			}
 	
 			tieziText.push(
