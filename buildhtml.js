@@ -153,6 +153,23 @@ function buildHTML(response)
 					jxicon.src = awokens[awoken].icon;
 				})
 			}
+			var cellBonus = row1.insertCell();
+			cellBonus.rowSpan = 2;
+			cellBonus.className = "bonus";
+			var bonusDetail = cellBonus.appendChild(document.createElement("div"));
+			bonusDetail.appendChild(document.createTextNode((mon.bonus.lvtype?"Lv110":"满等") + "+297时BONUS："));
+			var bonusName = ["HP","攻击力","回复力"];
+			for (var bi=0;bi<3;bi++)
+			{
+				var bonusNum = cellBonus.appendChild(document.createElement("div"));
+				var bn = mon.bonus.num[bi];
+				var bonusNameSpan = bonusNum.appendChild(document.createElement("span"));
+				bonusNameSpan.className = "bouns-name";
+				bonusNameSpan.appendChild(document.createTextNode(bonusName[bi]));
+				var bonusNumSpan = bonusNum.appendChild(document.createElement("span"));
+				bonusNumSpan.className = bn>0?"bouns-positive":"bouns-negative";
+				bonusNumSpan.appendChild(document.createTextNode((bn>0?"+":"") + bn));
+			}
 		})
 	})
 }

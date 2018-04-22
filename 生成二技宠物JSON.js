@@ -211,11 +211,11 @@ var monsterList = [{
     {
         group: "雷达捡徽章奖励（仅日本能捡到）：美化龙，5种进化分支技能一样",
         ids: [
-            113, //炎龙伊弗里特
-            115, //水龙利拜亚桑
-            117, //魔龙法夫纳
-            119, //神龙
-            121, //双头龙提亚马特
+            1109, //炎天雙極星・伊弗里特
+            1095, //水天雙極星・利拜亞桑
+            1096, //風天雙極星・法夫納
+            1110, //光天雙極星・神龍
+            1111, //闇天雙極星・提亞馬特
         ]
     },
     {
@@ -385,7 +385,15 @@ function getMonster(monsterIdArr, mdateArr, callback) {
         }
     })
 }
-
+//替换一些特殊字符
+function specialCharacterReplace(str)
+{
+    var nstr = str;
+    nstr = nstr.replace("闇", "暗");
+    nstr = nstr.replace("闘", "斗");
+    nstr = nstr.replace("撃", "击");
+    return nstr;
+}
 //将获取到的网页处理成json
 function dealMonsterHTML(responseText) {
     var PageDOM = new DOMParser().parseFromString(responseText, "text/html");
@@ -401,9 +409,7 @@ function dealMonsterHTML(responseText) {
     var monsterNameCard = monsterIconNameTable.rows[0].cells[1];
     monster.id = parseInt(/No\.(\d+)/ig.exec(monsterNameCard.querySelector("h3").textContent)[1]);
     monster.name = monsterNameCard.querySelector("h2").textContent; //怪物名
-    monster.name = monster.name.replace("闇", "暗");
-    monster.name = monster.name.replace("闘", "斗");
-    monster.name = monster.name.replace("撃", "击");
+    monster.name = specialCharacterReplace(monster.name);
     switch (monster.id) {
         case 4172:
             monster.name = "猎人♂・灭尽龙 X 装备";
@@ -420,9 +426,7 @@ function dealMonsterHTML(responseText) {
     var skill = content.querySelector("table:nth-of-type(5)"); //技能
     var skillInfoLine = skill.rows[0];
     skillObj.name = skillInfoLine.cells[0].querySelector("span").textContent; //技能名称
-    skillObj.name = skillObj.name.replace("闇", "暗");
-    skillObj.name = skillObj.name.replace("闘", "斗");
-    skillObj.name = skillObj.name.replace("撃", "击");
+    skillObj.name = specialCharacterReplace(skillObj.name);
     skillObj.CDlong = parseInt(skillInfoLine.cells[2].textContent); //技能原始CD
     skillObj.CDshort = parseInt(skillInfoLine.cells[4].textContent); //技能最短CD
     skillObj.levelMax = skillObj.CDlong - skillObj.CDshort + 1; //技能最大等级
@@ -448,9 +452,7 @@ function dealMonsterHTML(responseText) {
                     awokens.forEach(function(awoken) { //替换掉所有的觉醒日文名
                         strTemp = strTemp.replace(awoken.name, awoken.cname);
                     })
-                    strTemp = strTemp.replace("闇", "暗");
-                    strTemp = strTemp.replace("闘", "斗");
-                    strTemp = strTemp.replace("撃", "击");
+                    strTemp = specialCharacterReplace(strTemp);
                     strTemp = strTemp.replace(/(^\s*|\s*$)/igm, ""); //替换掉前后空格
                     sTTemp.push(strTemp);
                     break;
@@ -469,11 +471,27 @@ function dealMonsterHTML(responseText) {
     }
     clearOldText()
 
+    monster.bonus = {lvtype:0,num:[0,0,0]}; //储存辅助同属性追加的数值BONUS
+    var bonusCard = content.querySelector("table:nth-of-type(6)"); //bonus的卡
+    var bonusList = bonusCard.rows[1].cells[0].querySelector("table"); //具体显示bonus的表格
+    var maxBonusLine = bonusList.rows[bonusList.rows.length - 1];
+    if (/（LV110＆\+297時）/igm.test(maxBonusLine.cells[3].textContent))
+    {
+        monster.bonus.lvtype = 1;
+    }
+    for (var bi=0;bi<3;bi++)
+    {
+        var numCell = maxBonusLine.cells[bi];
+        var numSpan = numCell.querySelector("span");
+        var numInt = parseInt(numSpan.textContent.replace("+",""));
+        monster.bonus.num[bi] = numInt;
+    }
+
     monster.awokens = []; //储存觉醒
     var jxCard = content.querySelector("table:nth-of-type(7)"); //觉醒
-    var jxlist = jxCard.rows[0].cells[1].querySelectorAll("img");
-    for (var ji = 0; ji < jxlist.length; ji++) {
-        var jximg = jxlist[ji];
+    var jxList = jxCard.rows[0].cells[1].querySelectorAll("img");
+    for (var ji = 0; ji < jxList.length; ji++) {
+        var jximg = jxList[ji];
         var jxIndex = -1;
         awokens.some(function(awoken, index) {
             if (awoken.icon == jximg.src) {

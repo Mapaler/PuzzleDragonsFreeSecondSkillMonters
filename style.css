@@ -16,7 +16,7 @@ table{
 	border-bottom: 3px solid brown;
 	border-collapse:collapse;
 }
-.icon,.id,.skill-name,.skill-cd,.jx{
+.icon,.id,.skill-name,.skill-cd,.jx,.bonus{
 	border-top: 3px solid brown;
 }
 .icon{
@@ -32,7 +32,10 @@ table{
 .skill-cd{
 	width: 130px;
 }
-.id,.name,.skill-name,.skill-cd,.skill-detail,.jx{
+.bonus{
+	width: 100px;
+}
+.id,.name,.skill-name,.skill-cd,.skill-detail,.jx,.bonus{
 	border-left: 1px solid brown;
 	padding-left: 5px;
 }
@@ -46,4 +49,15 @@ table{
 }
 img{
 	vertical-align: middle;
+}
+.bouns-name{
+	width: 50px;
+	display: inline-block;
+	text-align: right;
+}
+.bouns-positive{
+	color: #FF73B7;
+}
+.bouns-negative{
+	color: rgb(35, 20, 255);
 }
