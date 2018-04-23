@@ -513,5 +513,8 @@ getGroup(monsterList, monsterDataList, function() {
     console.log("处理完毕", monsterDataList);
     var jtxt = JSON.stringify(monsterDataList);
     //jtxt=jtxt.replace(/"(id|name|mosters|skill|CDlong|CDshort|levelMax|text|type|src|icon|awokens)"/igm,"$1");
-    console.log(jtxt);
+    //console.log(jtxt);
+    var jsonTextarea = document.querySelector(".jsonTextarea") || document.body.appendChild(document.createElement("textarea"));
+    jsonTextarea.classList.add("jsonTextarea");
+    jsonTextarea.value = outText;
 })

@@ -1,3 +1,5 @@
+//应用于网址：
+//http://pad.skyozora.com/skill/%E8%A6%BA%E9%86%92%E6%8A%80%E8%83%BD%E4%B8%80%E8%A6%BD/
 var awokenCname = [ //对应的中文简称
 	"HP+",
 	"攻击+",
@@ -80,4 +82,7 @@ var outText = JSON.stringify(awokens);
 outText = outText.replace(/"(c?name|icon)"/igm,"$1");
 //outText = outText.replace(/^\[(.+)\]$/igm,"[$1\n]");
 //outText = outText.replace(/{(.+?)}/igm,"\n{$1}");
-console.log(outText);
+var jsonTextarea = document.querySelector(".jsonTextarea") || table.parentNode.insertBefore(document.createElement("textarea"),table);
+jsonTextarea.classList.add("jsonTextarea");
+jsonTextarea.value = outText;
+//console.log(outText);
