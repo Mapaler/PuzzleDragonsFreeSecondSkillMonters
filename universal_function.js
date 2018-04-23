@@ -51,3 +51,13 @@ function specialMonsterName(monid)
             return false;
     }
 }
+
+//替换一些无法转换为简体的特殊字符
+function specialCharacterReplace(str)
+{
+    var nstr = str;
+    nstr = nstr.replace("闇", "暗");
+    nstr = nstr.replace("闘", "斗");
+    nstr = nstr.replace("撃", "击");
+    return nstr;
+}

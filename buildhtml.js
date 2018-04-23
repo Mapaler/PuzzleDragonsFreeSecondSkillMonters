@@ -28,6 +28,10 @@ function buildHTML(response)
 
 		var tb = grpTable.appendChild(document.createElement("table"));
 		grp.mosters.forEach(function(mon){
+			if (specialMonsterName(mon.id)) //处理几个word转简体会出错的
+				mon.name = specialMonsterName(mon.id)
+			mon.name = specialCharacterReplace(mon.name);
+
 			var row1 = tb.insertRow();
 			row1.className = "row1";
 			var row2 = tb.insertRow();
@@ -46,10 +50,6 @@ function buildHTML(response)
 			cellId.appendChild(document.createTextNode("No."+mon.id));
 			var cellName = row2.insertCell();
 			cellName.className = "name";
-			
-			if (specialMonsterName(mon.id)) //处理几个word转简体会出错的
-				mon.name = specialMonsterName(mon.id)
-
 			cellName.appendChild(document.createTextNode(mon.name));
 			var cellSkillName = row1.insertCell();
 			cellSkillName.className = "skill-name";
@@ -64,7 +64,7 @@ function buildHTML(response)
 				switch(ifo.type)
 				{
 					case 0:
-						cellSkillText.appendChild(document.createTextNode(ifo.text));
+						cellSkillText.appendChild(document.createTextNode(specialCharacterReplace(ifo.text)));
 						break;
 					case 1:
 						cellSkillText.appendChild(document.createElement("br"));
