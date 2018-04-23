@@ -65,20 +65,20 @@ var awokens = [
 
 //储存的是珠子
 var orbs = [
-{icon:"http://pad.skyozora.com/images/drops/Fire.png",cname:"火珠"},
-{icon:"http://pad.skyozora.com/images/drops/Fire+.png",cname:"强化火珠"},
-{icon:"http://pad.skyozora.com/images/drops/Water.png",cname:"水珠"},
-{icon:"http://pad.skyozora.com/images/drops/Water+.png",cname:"强化水珠"},
-{icon:"http://pad.skyozora.com/images/drops/Wood.png",cname:"木珠"},
-{icon:"http://pad.skyozora.com/images/drops/Wood+.png",cname:"强化木珠"},
-{icon:"http://pad.skyozora.com/images/drops/Light.png",cname:"光珠"},
-{icon:"http://pad.skyozora.com/images/drops/Light+.png",cname:"强化光珠"},
-{icon:"http://pad.skyozora.com/images/drops/Dark.png",cname:"暗珠"},
-{icon:"http://pad.skyozora.com/images/drops/Dark+.png",cname:"强化暗珠"},
-{icon:"http://pad.skyozora.com/images/drops/Heart.png",cname:"心珠"},
-{icon:"http://pad.skyozora.com/images/drops/Heart+.png",cname:"强化心珠"},
-{icon:"http://pad.skyozora.com/images/drops/Dead.png",cname:"废珠"},
-{icon:"http://pad.skyozora.com/images/drops/Bomb.png",cname:"炸弹"},
-{icon:"http://pad.skyozora.com/images/drops/Poison.png",cname:"毒珠"},
-{icon:"http://pad.skyozora.com/images/drops/Poison+.png",cname:"剧毒"}
+{icon:"http://pad.skyozora.com/images/drops/Fire.png",name:"Fire",cname:"火珠"},
+{icon:"http://pad.skyozora.com/images/drops/Fire+.png",name:"Fire+",cname:"强化火珠"},
+{icon:"http://pad.skyozora.com/images/drops/Water.png",name:"Water",cname:"水珠"},
+{icon:"http://pad.skyozora.com/images/drops/Water+.png",name:"Water+",cname:"强化水珠"},
+{icon:"http://pad.skyozora.com/images/drops/Wood.png",name:"Wood",cname:"木珠"},
+{icon:"http://pad.skyozora.com/images/drops/Wood+.png",name:"Wood+",cname:"强化木珠"},
+{icon:"http://pad.skyozora.com/images/drops/Light.png",name:"Light",cname:"光珠"},
+{icon:"http://pad.skyozora.com/images/drops/Light+.png",name:"Light+",cname:"强化光珠"},
+{icon:"http://pad.skyozora.com/images/drops/Dark.png",name:"Dark",cname:"暗珠"},
+{icon:"http://pad.skyozora.com/images/drops/Dark+.png",name:"Dark+",cname:"强化暗珠"},
+{icon:"http://pad.skyozora.com/images/drops/Heart.png",name:"Heart",cname:"心珠"},
+{icon:"http://pad.skyozora.com/images/drops/Heart+.png",name:"Heart+",cname:"强化心珠"},
+{icon:"http://pad.skyozora.com/images/drops/Dead.png",name:"Dead",cname:"废珠"},
+{icon:"http://pad.skyozora.com/images/drops/Bomb.png",name:"Bomb",cname:"炸弹"},
+{icon:"http://pad.skyozora.com/images/drops/Poison.png",name:"Poison",cname:"毒珠"},
+{icon:"http://pad.skyozora.com/images/drops/Poison+.png",name:"Poison+",cname:"剧毒"}
 ];
