@@ -53,7 +53,7 @@ function buildHTML(response)
 			cellName.appendChild(document.createTextNode(mon.name));
 			var cellSkillName = row1.insertCell();
 			cellSkillName.className = "skill-name";
-			cellSkillName.appendChild(document.createTextNode(mon.skill.name));
+			cellSkillName.appendChild(document.createTextNode(specialCharacterReplace(mon.skill.name)));
 			var cellSkillCD = row1.insertCell();
 			cellSkillCD.className = "skill-cd";
 			cellSkillCD.appendChild(document.createTextNode("CD:" + mon.skill.CD[0] + "→" + mon.skill.CD[1] + "(Lv"+(mon.skill.CD[0] - mon.skill.CD[1] + 1)+")"));
