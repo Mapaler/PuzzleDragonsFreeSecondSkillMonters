@@ -395,6 +395,33 @@ function specialCharacterReplace(str)
     nstr = nstr.replace("撃", "击");
     return nstr;
 }
+//返回特殊的几个word会转错的
+function specialMonsterName(monid)
+{
+    switch(monid)
+    {
+        case 1098:
+            return "试练刚神・海克力斯";
+            break;
+        case 3834:
+            return "空都的守护神・雅典娜＝赫利奥斯";
+            break;
+        case 3193:
+            return "帝都之守护神・雅典娜";
+            break;
+        case 4172:
+            return "猎人♂・灭尽龙 X 装备";
+            break;
+        case 4173:
+            return "猎人♀・冰牙龙X装备";
+            break;
+        case 4174:
+            return "猎人♀・风漂龙X装备";
+            break;
+        default:
+            return false;
+    }
+}
 //将获取到的网页处理成json
 function dealMonsterHTML(responseText) {
     var PageDOM = new DOMParser().parseFromString(responseText, "text/html");
@@ -409,28 +436,14 @@ function dealMonsterHTML(responseText) {
     monster.icon = monsterIcon.src;
     var monsterNameCard = monsterIconNameTable.rows[0].cells[1];
     monster.id = parseInt(/No\.(\d+)/ig.exec(monsterNameCard.querySelector("h3").textContent)[1]);
-    monster.name = monsterNameCard.querySelector("h2").textContent; //怪物名
-    monster.name = specialCharacterReplace(monster.name);
-    switch (monster.id) {
-        case 4172:
-            monster.name = "猎人♂・灭尽龙 X 装备";
-            break;
-        case 4173:
-            monster.name = "猎人♀・冰牙龙X装备";
-            break;
-        case 4174:
-            monster.name = "猎人♀・风漂龙X装备";
-            break;
-        default:
-    }
+    monster.name = specialCharacterReplace(monsterNameCard.querySelector("h2").textContent); //怪物名
+    if (specialMonsterName(monster.name))
+        monster.name = specialMonsterName(monster.name);
 
     var skill = content.querySelector("table:nth-of-type(5)"); //技能
     var skillInfoLine = skill.rows[0];
-    skillObj.name = skillInfoLine.cells[0].querySelector("span").textContent; //技能名称
-    skillObj.name = specialCharacterReplace(skillObj.name);
-    skillObj.CDlong = parseInt(skillInfoLine.cells[2].textContent); //技能原始CD
-    skillObj.CDshort = parseInt(skillInfoLine.cells[4].textContent); //技能最短CD
-    skillObj.levelMax = skillObj.CDlong - skillObj.CDshort + 1; //技能最大等级
+    skillObj.name = specialCharacterReplace(skillInfoLine.cells[0].querySelector("span").textContent); //技能名称
+    skillObj.CD = [parseInt(skillInfoLine.cells[2].textContent), parseInt(skillInfoLine.cells[4].textContent)] //技能原始CD，技能最短CD
 
     var skillDetail = skill.rows[1].cells[0]; //技能详细的内容
     var skillText = [];
@@ -451,7 +464,7 @@ function dealMonsterHTML(responseText) {
                 case "#text":
                     var strTemp = node.nodeValue;
                     awokens.forEach(function(awoken) { //替换掉所有的觉醒日文名
-                        strTemp = strTemp.replace(awoken.name, awoken.cname);
+                        strTemp = strTemp.replace(awoken.name, "");
                     })
                     strTemp = specialCharacterReplace(strTemp);
                     strTemp = strTemp.replace(/(^\s*|\s*$)/igm, ""); //替换掉前后空格
@@ -463,7 +476,32 @@ function dealMonsterHTML(responseText) {
                     break;
                 case "IMG":
                     clearOldText();
-                    skillText.push({ type: 2, src: node.src });
+                    var orbIndex = -1; //记录宝珠序号
+                    orbs.some(function(orb,idx){
+                        if (orb.icon == node.src)
+                        {
+                            orbIndex = idx;
+                            return true;
+                        }else return false;
+                    })
+                    if (orbIndex>=0)
+                    {
+                        skillText.push({ type: 2, index: orbIndex });
+                        break;
+                    }
+                    var awokenIndex = -1; //记录觉醒序号
+                    awokens.some(function(awoken,idx){
+                        if (awoken.icon == node.src)
+                        {
+                            awokenIndex = idx;
+                            return true;
+                        }else return false;
+                    })
+                    if (awokenIndex>=0)
+                    {
+                        skillText.push({ type: 3, index: awokenIndex });
+                        break;
+                    }
                     break;
                 default:
                     sTTemp.push("未知的TAG");

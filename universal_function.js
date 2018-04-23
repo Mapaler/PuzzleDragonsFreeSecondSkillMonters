@@ -38,6 +38,15 @@ function specialMonsterName(monid)
         case 3193:
             return "帝都之守护神・雅典娜";
             break;
+        case 4172:
+            return "猎人♂・灭尽龙 X 装备";
+            break;
+        case 4173:
+            return "猎人♀・冰牙龙X装备";
+            break;
+        case 4174:
+            return "猎人♀・风漂龙X装备";
+            break;
         default:
             return false;
     }
