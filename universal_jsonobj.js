@@ -80,5 +80,5 @@ var orbs = [
 {icon:"http://pad.skyozora.com/images/drops/Dead.png",cname:"废珠"},
 {icon:"http://pad.skyozora.com/images/drops/Bomb.png",cname:"炸弹"},
 {icon:"http://pad.skyozora.com/images/drops/Poison.png",cname:"毒珠"},
-{icon:"http://pad.skyozora.com/images/drops/Poison+.png",cname:"剧毒"},
+{icon:"http://pad.skyozora.com/images/drops/Poison+.png",cname:"剧毒"}
 ];
