@@ -278,7 +278,7 @@ var monsterList = [{
         group: "MP商店：普通期间限定商品",
         ids: [
             3782, //木之宮孝男
-            3865, //木之宮孝男
+            3865, //御坊茶魔
             4017, //星馬烈
             4018, //星馬豪
         ]
@@ -477,7 +477,9 @@ function dealMonsterHTML(responseText) {
                     break;
                 case "IMG":
                     clearOldText();
-                    if (node.src==orbs[0].icon &&        //火珠
+                    
+                    if (nodes[ni + 12] != undefined &&  //首先有这么长
+                        node.src==orbs[0].icon &&        //火珠
                         nodes[ni+1].src==orbs[2].icon && //水珠
                         nodes[ni+2].src==orbs[4].icon && //木珠
                         nodes[ni+3].src==orbs[6].icon && //光珠
@@ -485,17 +487,18 @@ function dealMonsterHTML(responseText) {
                         nodes[ni+5].src==orbs[10].icon && //心珠
                         nodes[ni+6].src==changeUrl &&    //转为
                         nodes[ni+7].src==orbs[1].icon && //强化火珠
-                        nodes[ni+7].src==orbs[1].icon && //强化水珠
-                        nodes[ni+7].src==orbs[1].icon && //强化木珠
-                        nodes[ni+7].src==orbs[1].icon && //强化光珠
-                        nodes[ni+7].src==orbs[1].icon && //强化暗珠
-                        nodes[ni+7].src==orbs[1].icon    //强化心珠
+                        nodes[ni+8].src==orbs[3].icon && //强化水珠
+                        nodes[ni+9].src==orbs[5].icon && //强化木珠
+                        nodes[ni+10].src==orbs[7].icon && //强化光珠
+                        nodes[ni+11].src==orbs[9].icon && //强化暗珠
+                        nodes[ni+12].src==orbs[11].icon    //强化心珠
                     ) 
                     {
                         sTTemp.push("全宝珠强化");
                         ni += 12; //跳过接下来的12个
                         break;
                     }
+
                     //记录改变
                     if (node.src == changeUrl)
                     {
@@ -544,7 +547,7 @@ function dealMonsterHTML(responseText) {
         )
         {
             var lightOrbs = [txt.index];
-            for (var oi=idx;oi<arr.length;oi++)
+            for (var oi=idx+1;oi<arr.length;oi++)
             {
                 var txt2 = arr[oi];
                 if (txt2.type==3 && txt2.index%2 && txt2.index<12){
@@ -562,7 +565,9 @@ function dealMonsterHTML(responseText) {
                 return true;
             }else
             {
-                skillText.splice(idx + lightOrbs.length,0,"强化");
+                skillText.splice(idx + lightOrbs.length,0,{ type: 0, text: "强化" });
+                skillText.splice(idx - lightOrbs.length - 1,lightOrbs.length + 1);
+                return true;
             }
         }else return false;
     })

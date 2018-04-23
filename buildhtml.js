@@ -13,7 +13,10 @@ window.onload = function()
 		}
 	})
 }
-
+//数字补0
+function PrefixInteger(num, length) {  
+	return (Array(length).join('0') + num).slice(-length); 
+}
 function buildHTML(response)
 {
 	mdata = JSON.parse(response);
@@ -33,10 +36,11 @@ function buildHTML(response)
 			cellIcon.rowSpan = 2;
 			cellIcon.className = "icon";
 			var lnk = cellIcon.appendChild(document.createElement("a"));
-			var icon = lnk.appendChild(document.createElement("img"));
-			icon.alt = mon.name;
 			lnk.href = "http://pad.skyozora.com/pets/" + mon.id;
-			icon.src = mon.icon;
+			lnk.target = "_blank";
+			var icon = lnk.appendChild(document.createElement("img"));
+			icon.alt = icon.title = mon.name;
+			icon.src = "images/pets_icon/" + mon.id + ".png";
 			var cellId = row1.insertCell();
 			cellId.className = "id";
 			cellId.appendChild(document.createTextNode("No."+mon.id));
@@ -52,7 +56,7 @@ function buildHTML(response)
 			cellSkillName.appendChild(document.createTextNode(mon.skill.name));
 			var cellSkillCD = row1.insertCell();
 			cellSkillCD.className = "skill-cd";
-			cellSkillCD.appendChild(document.createTextNode(mon.skill.CDlong + "→" + mon.skill.CDshort + "(Lv"+mon.skill.levelMax+")"));
+			cellSkillCD.appendChild(document.createTextNode("CD:" + mon.skill.CD[0] + "→" + mon.skill.CD[1] + "(Lv"+(mon.skill.CD[0] - mon.skill.CD[1] + 1)+")"));
 			var cellSkillText = row2.insertCell();
 			cellSkillText.className = "skill-detail";
 			cellSkillText.colSpan = 3;
@@ -65,7 +69,29 @@ function buildHTML(response)
 					case 1:
 						cellSkillText.appendChild(document.createElement("br"));
 						break;
-					case 2:
+					case 2:case 3:case 4:
+						var img = cellSkillText.appendChild(document.createElement("img"));
+						img.className = "icon-in-txt"
+						if (ifo.type == 2)
+						{
+							img.className = "change-in-txt"
+							img.src = "images/change.gif";
+							img.alt = img.title = "→";
+						}else if(ifo.type == 3)
+						{
+							img.src = "images/drops/" + orbs[ifo.index].name + ".png";
+							img.alt = img.title = orbs[ifo.index].cname;
+						}else if(ifo.type == 4)
+						{
+							img.src = "images/skill_icon/skill-" + PrefixInteger(ifo.index+1,2) + ".png";
+							img.alt = img.title = awokens[ifo.index].cname;
+						}
+						break;
+					case 3:
+						var img = cellSkillText.appendChild(document.createElement("img"));
+						img.className = "icon-in-txt"
+						img.src = "images/change.gif";
+						break;
 						if (ifo.src != "http://pad.skyozora.com/images/change.gif")
 						{
 							var img = cellSkillText.appendChild(document.createElement("img"));
@@ -141,8 +167,12 @@ function buildHTML(response)
 			if (wepon)
 			{
 				mon.awokens.forEach(function(awoken){
-					var jxicon = cellJX.appendChild(document.createElement("img"));
-					jxicon.src = awokens[awoken].icon;
+					var jxiconLink = cellJX.appendChild(document.createElement("a"));
+					jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
+					jxiconLink.target = "_blank";
+					var jxicon = jxiconLink.appendChild(document.createElement("img"));
+					jxicon.src = "images/skill_icon/skill-" + PrefixInteger(awoken+1,2) + ".png";
+					jxiconLink.alt = jxiconLink.title = awokens[awoken].cname;
 				})
 			}
 			var cellBonus = row1.insertCell();
