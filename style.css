@@ -16,6 +16,9 @@ table{
 	border-bottom: 3px solid brown;
 	border-collapse:collapse;
 }
+a{
+	text-decoration:none;
+}
 .icon,.id,.skill-name,.skill-cd,.jx,.bonus{
 	border-top: 3px solid brown;
 }

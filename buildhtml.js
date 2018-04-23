@@ -72,86 +72,20 @@ function buildHTML(response)
 					case 2:case 3:case 4:
 						var img = cellSkillText.appendChild(document.createElement("img"));
 						img.className = "icon-in-txt"
-						if (ifo.type == 2)
+						if (ifo.type == 2) //转换为
 						{
 							img.className = "change-in-txt"
 							img.src = "images/change.gif";
 							img.alt = img.title = "→";
-						}else if(ifo.type == 3)
+						}else if(ifo.type == 3) //宝珠
 						{
 							img.src = "images/drops/" + orbs[ifo.index].name + ".png";
 							img.alt = img.title = orbs[ifo.index].cname;
-						}else if(ifo.type == 4)
+						}else if(ifo.type == 4) //觉醒
 						{
 							img.src = "images/skill_icon/skill-" + PrefixInteger(ifo.index+1,2) + ".png";
 							img.alt = img.title = awokens[ifo.index].cname;
-						}
-						break;
-					case 3:
-						var img = cellSkillText.appendChild(document.createElement("img"));
-						img.className = "icon-in-txt"
-						img.src = "images/change.gif";
-						break;
-						if (ifo.src != "http://pad.skyozora.com/images/change.gif")
-						{
-							var img = cellSkillText.appendChild(document.createElement("img"));
-							img.className = "icon-in-txt"
-							img.src = ifo.src;
-						}
-						switch(ifo.src)
-						{
-							case "http://pad.skyozora.com/images/change.gif":
-								cellSkillText.appendChild(document.createTextNode("→"));
-								break;
-						
-							case "http://pad.skyozora.com/images/drops/Fire.png":
-								cellSkillText.appendChild(document.createTextNode("火珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Fire+.png":
-								cellSkillText.appendChild(document.createTextNode("强化火珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Water.png":
-								cellSkillText.appendChild(document.createTextNode("水珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Water+.png":
-								cellSkillText.appendChild(document.createTextNode("强化水珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Wood.png":
-								cellSkillText.appendChild(document.createTextNode("木珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Wood+.png":
-								cellSkillText.appendChild(document.createTextNode("强化木珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Light.png":
-								cellSkillText.appendChild(document.createTextNode("光珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Light+.png":
-								cellSkillText.appendChild(document.createTextNode("强化光珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Dark.png":
-								cellSkillText.appendChild(document.createTextNode("暗珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Dark+.png":
-								cellSkillText.appendChild(document.createTextNode("强化暗珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Heart.png":
-								cellSkillText.appendChild(document.createTextNode("心珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Heart+.png":
-								cellSkillText.appendChild(document.createTextNode("强化心珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Dead.png":
-								cellSkillText.appendChild(document.createTextNode("废珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Poison.png":
-								cellSkillText.appendChild(document.createTextNode("毒珠"));
-								break;
-							case "http://pad.skyozora.com/images/drops/Poison+.png":
-								cellSkillText.appendChild(document.createTextNode("剧毒"));
-								break;
-						
-							default:
-								break;
+							cellSkillText.appendChild(document.createTextNode(img.alt + " "));
 						}
 						break;
 					default:

@@ -1,3 +1,5 @@
+//应用于网址：
+//http://pad.skyozora.com/ 任意页面
 var monsterList = [{
         group: "攻击态势英雄",
         ids: [
