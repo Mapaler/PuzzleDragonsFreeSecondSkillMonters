@@ -1,4 +1,5 @@
-﻿var awokens = [
+﻿//储存的是觉醒
+var awokens = [
 {icon:"http://i1296.photobucket.com/albums/ag18/skyozora/skill_icon/skill-01_zpsxxwacmws.png",name:"HP強化",cname:"HP+"},
 {icon:"http://i1296.photobucket.com/albums/ag18/skyozora/skill_icon/skill-02_zpsy1jchamv.png",name:"攻撃強化",cname:"攻击+"},
 {icon:"http://i1296.photobucket.com/albums/ag18/skyozora/skill_icon/skill-03_zpsak0tuqfw.png",name:"回復強化",cname:"回复+"},
@@ -60,4 +61,24 @@
 {icon:"http://i1296.photobucket.com/albums/ag18/skyozora/skill_icon/skill-59_zpsqpybuzlz.png",name:"L字消し軽減",cname:"L盾"},
 {icon:"http://i1296.photobucket.com/albums/ag18/skyozora/skill_icon/skill-60_zpstbqdrxc8.png",name:"L字消し攻撃",cname:"L解锁"},
 {icon:"http://i1296.photobucket.com/albums/ag18/skyozora/skill_icon/skill-61_zpsgyrn9dmp.png",name:"超コンボ強化",cname:"10c"}
+];
+
+//储存的是珠子
+var orbs = [
+{icon:"http://pad.skyozora.com/images/drops/Fire.png",cname:"火珠"},
+{icon:"http://pad.skyozora.com/images/drops/Fire+.png",cname:"强化火珠"},
+{icon:"http://pad.skyozora.com/images/drops/Water.png",cname:"水珠"},
+{icon:"http://pad.skyozora.com/images/drops/Water+.png",cname:"强化水珠"},
+{icon:"http://pad.skyozora.com/images/drops/Wood.png",cname:"木珠"},
+{icon:"http://pad.skyozora.com/images/drops/Wood+.png",cname:"强化木珠"},
+{icon:"http://pad.skyozora.com/images/drops/Light.png",cname:"光珠"},
+{icon:"http://pad.skyozora.com/images/drops/Light+.png",cname:"强化光珠"},
+{icon:"http://pad.skyozora.com/images/drops/Dark.png",cname:"暗珠"},
+{icon:"http://pad.skyozora.com/images/drops/Dark+.png",cname:"强化暗珠"},
+{icon:"http://pad.skyozora.com/images/drops/Heart.png",cname:"心珠"},
+{icon:"http://pad.skyozora.com/images/drops/Heart+.png",cname:"强化心珠"},
+{icon:"http://pad.skyozora.com/images/drops/Dead.png",cname:"废珠"},
+{icon:"http://pad.skyozora.com/images/drops/Bomb.png",cname:"炸弹"},
+{icon:"http://pad.skyozora.com/images/drops/Poison.png",cname:"毒珠"},
+{icon:"http://pad.skyozora.com/images/drops/Poison+.png",cname:"剧毒"},
 ];
