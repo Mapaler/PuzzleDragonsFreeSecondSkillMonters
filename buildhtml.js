@@ -42,18 +42,10 @@ function buildHTML(response)
 			cellId.appendChild(document.createTextNode("No."+mon.id));
 			var cellName = row2.insertCell();
 			cellName.className = "name";
-			switch(mon.id)
-			{
-				case 1098:
-					mon.name = "试练刚神・海克力斯";
-					break;
-				case 3834:
-					mon.name = "空都的守护神・雅典娜＝赫利奥斯";
-					break;
-				case 3193:
-					mon.name = "帝都之守护神・雅典娜";
-					break;
-			}
+			
+			if (specialMonsterName(mon.id)) //处理几个word转简体会出错的
+				mon.name = specialMonsterName(mon.id)
+
 			cellName.appendChild(document.createTextNode(mon.name));
 			var cellSkillName = row1.insertCell();
 			cellSkillName.className = "skill-name";

@@ -66,18 +66,9 @@ function buildNGACode(response)
 			tieziText.push("[/tr]");
 			tieziText.push("[tr]");
 	
-			switch(mon.id)
-			{
-				case 1098:
-					mon.name = "试练刚神・海克力斯";
-					break;
-				case 3834:
-					mon.name = "空都的守护神・雅典娜＝赫利奥斯";
-					break;
-				case 3193:
-					mon.name = "帝都之守护神・雅典娜";
-					break;
-			}
+			if (specialMonsterName(mon.id)) //处理几个word转简体会出错的
+				mon.name = specialMonsterName(mon.id)
+
 			var showUTF_8UBB = mon.name;
 			showUTF_8UBB = showUTF_8UBB.replace("・","&#12539;");
 			showUTF_8UBB = showUTF_8UBB.replace("♀","&#9792;");
