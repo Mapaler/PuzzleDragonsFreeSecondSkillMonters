@@ -116,9 +116,9 @@ function buildHTML(response)
 							block2.className = "blockCBp";
 							if (ifo.index == 13) //炸弹
 							{
-								var blockFire1 = blockLight.appendChild(document.createElement("div")); //点灯层
+								var blockFire1 = block1.appendChild(document.createElement("div")); //点灯层
 								blockFire1.className = "block-fire-1";
-								var blockFire2 = blockLight.appendChild(document.createElement("div")); //点灯层
+								var blockFire2 = block1.appendChild(document.createElement("div")); //点灯层
 								blockFire2.className = "block-fire-2";
 							}
 							//var block3 = block2.appendChild(document.createElement("div")); //点灯层
