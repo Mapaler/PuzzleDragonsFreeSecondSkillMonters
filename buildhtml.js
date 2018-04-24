@@ -83,7 +83,7 @@ function buildHTML(response)
 					case 1:
 						cellSkillText.appendChild(document.createElement("br"));
 						break;
-					case 2:case 3:case 4:
+					case 2:case 4:
 						var img = cellSkillText.appendChild(document.createElement("img"));
 						img.className = "icon-in-txt"
 						if (ifo.type == 2) //转换为
@@ -101,6 +101,14 @@ function buildHTML(response)
 							img.alt = img.title = awokens[ifo.index].cname;
 							cellSkillText.appendChild(document.createTextNode(img.alt + " "));
 						}
+						break;
+					case 3:
+						var block1 = cellSkillText.appendChild(document.createElement("div")); //珠子
+						block1.className = "block" + (ifo.index%2?"2":"") + " block-" + ifo.index;
+						var block2 = block1.appendChild(document.createElement("div")); //点灯层
+						if (ifo.index%2)
+							block2.className = "blockCB blockCB-" + ifo.index;
+						//var block3 = block2.appendChild(document.createElement("div")); //锁层
 						break;
 					default:
 						console.error("未知的类型",ifo);

@@ -70,6 +70,7 @@ img{
 	display: inline-block;
 	background-repeat: no-repeat;
 }
+/*怪物属性*/
 .property,.subproperty{
 	width: 98px;
 	height: 99px;
@@ -78,32 +79,109 @@ img{
 	background-image: url(images/cards/CARDFRAME2.PNG)
 }
 .property-0{
-	background-position: 0px 0px;
+	background-position: 0 0; /*火*/
 }
 .property-1{
-	background-position: -102px 0px;
+	background-position: -102px 0; /*水*/
 }
 .property-2{
-	background-position: -204px 0px;
+	background-position: -204px 0; /*木*/
 }
 .property-3{
-	background-position: -306px 0px;
+	background-position: -306px 0; /*光*/
 }
 .property-4{
-	background-position: -408px 0px;
+	background-position: -408px 0; /*暗*/
 }
 .subproperty-0{
-	background-position: 0px -102px;
+	background-position: 0 -102px; /*火*/
 }
 .subproperty-1{
-	background-position: -102px -102px;
+	background-position: -102px -102px; /*水*/
 }
 .subproperty-2{
-	background-position: -204px -102px;
+	background-position: -204px -102px; /*木*/
 }
 .subproperty-3{
-	background-position: -306px -102px;
+	background-position: -306px -102px; /*光*/
 }
 .subproperty-4{
-	background-position: -408px -102px;
+	background-position: -408px -102px; /*暗*/
+}
+/*宝珠*/
+.block,.block2{
+	background-image: url(images/block/BLOCK2.PNG);
+	width:102px;height:102px;
+	box-sizing: border-box;
+	background-origin:content-box;
+	background-clip:content-box;
+	border: #B33 1px solid;
+}
+.block2{
+	background-image: url(images/block/BLOCK2CB.PNG);
+}
+.blockCB{
+	background-image: url(images/block/BLOCK2CB.PNG);
+	width:102px;height:102px;
+	box-sizing: border-box;
+	background-origin:content-box;
+	background-clip:content-box;
+	border: #33B 1px solid;
+}
+.block-0{
+	background-position: 0 0; /*火珠*/
+}
+.block-1{
+	background-position: 0 0; /*强化火珠*/
+}
+.block-2{
+	background-position: -104px 0; /*水珠*/
+}
+.block-3{
+	background-position: -104px 0; /*强化水珠*/
+}
+.block-4{
+	background-position: -208px 0; /*木珠*/
+}
+.block-5{
+	background-position: -208px 0; /*强化木珠*/
+}
+.block-6{
+	background-position: -312px 0; /*光珠*/
+}
+.block-7{
+	background-position: -312px 0; /*强化光珠*/
+}
+.block-8{
+	background-position: 0 -104px; /*暗珠*/
+}
+.block-9{
+	background-position: 0 -104px; /*强化暗珠*/
+}
+.block-10{
+	padding: 8px;
+	background-position: 0 -408px; /*心珠*/
+}
+.block-11{
+	padding: 8px;
+	background-position: 0 -408px; /*强化心珠*/
+}
+.block-12{
+	padding: 9px;
+	background-position: -104px -104px; /*废珠*/
+}
+.block-13{ /*炸弹*/
+	padding: 0 9px;
+	background-position: -416px 0;
+}
+.blockCB-13{ /*炸弹*/
+	padding: 0 9px;
+	background-position: -156px -196px;
+}
+.block-14{
+	padding: 5px;
+	background-position: 0 -312px; /*毒珠*/
+}
+.block-15{
+	background-position: 0 -208px; /*剧毒*/
 }
