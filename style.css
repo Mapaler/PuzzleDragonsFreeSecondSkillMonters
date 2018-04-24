@@ -26,12 +26,6 @@ a{
 	width: 110px;
 	height: 120px;
 }
-.icon-link{
-	width: 96px;
-	height: 96px;
-	display: inline-block;
-	background-repeat: no-repeat;
-}
 .id{
 	width: 200px;
 }
@@ -69,4 +63,47 @@ img{
 }
 .bouns-negative{
 	color: rgb(35, 20, 255);
+}
+.icon-link{
+	width: 98px;
+	height: 99px;
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+.property,.subproperty{
+	width: 98px;
+	height: 99px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-image: url(images/cards/CARDFRAME2.PNG)
+}
+.property-0{
+	background-position: 0px 0px;
+}
+.property-1{
+	background-position: -102px 0px;
+}
+.property-2{
+	background-position: -204px 0px;
+}
+.property-3{
+	background-position: -306px 0px;
+}
+.property-4{
+	background-position: -408px 0px;
+}
+.subproperty-0{
+	background-position: 0px -102px;
+}
+.subproperty-1{
+	background-position: -102px -102px;
+}
+.subproperty-2{
+	background-position: -204px -102px;
+}
+.subproperty-3{
+	background-position: -306px -102px;
+}
+.subproperty-4{
+	background-position: -408px -102px;
 }

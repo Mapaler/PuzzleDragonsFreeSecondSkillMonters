@@ -83,7 +83,16 @@ var orbs = [
 {icon:"http://pad.skyozora.com/images/drops/Poison+.png",name:"Poison+",cname:"剧毒"}
 ];
 
-//储存的是珠子
+//储存的是属性
+var propertys = [
+{icon:"http://pad.skyozora.com/images/drops/Fire.png",name:"Fire",cname:"火"},
+{icon:"http://pad.skyozora.com/images/drops/Water.png",name:"Water",cname:"水"},
+{icon:"http://pad.skyozora.com/images/drops/Wood.png",name:"Wood",cname:"木"},
+{icon:"http://pad.skyozora.com/images/drops/Light.png",name:"Light",cname:"光"},
+{icon:"http://pad.skyozora.com/images/drops/Dark.png",name:"Dark",cname:"暗"},
+];
+
+//储存的是类型
 var types = [
 {icon:"http://pad.skyozora.com/images/type/dragon.png",name:"dragon",jname:"ドラゴン",cname:"龙"},
 {icon:"http://pad.skyozora.com/images/type/god.png",name:"god",jname:"神",cname:"神"},

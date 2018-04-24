@@ -42,16 +42,23 @@ function buildHTML(response)
 			var lnk = cellIcon.appendChild(document.createElement("a"));
 			lnk.href = "http://pad.skyozora.com/pets/" + mon.id;
 			lnk.target = "_blank";
-			lnk.className = "icon-link";
-			//var icon = lnk.appendChild(document.createElement("div"));
 			lnk.alt = lnk.title = mon.name;
-			lnk.style.backgroundImage = "url(images/cards/CARDS_" + PrefixInteger(Math.ceil(mon.id/100),3) + ".png)";
-			var indexInThisPage = mon.id % 100;
-			var ix = (indexInThisPage-1) % 10;
-			var iy = Math.ceil(indexInThisPage / 10) - 1;
-			var position = [96 * ix + 6 * (ix - 1),96 * iy + 6 * (iy - 1)];
-			if (mon.id == 3920) console.log(ix,iy);
-			lnk.style.backgroundPosition = position.map(function(p){return (-1*p) + "px";}).join(" ");  
+			//怪物头像部分
+			var iconF1 = lnk.appendChild(document.createElement("div"));iconF1.className = "icon-link";
+			iconF1.style.backgroundImage = "url(images/cards/CARDS_" + PrefixInteger(Math.ceil(mon.id/100),3) + ".png)";
+			var position = iconPosition(mon.id);
+			iconF1.style.backgroundPosition = position.map(function(p){return p + "px";}).join(" ");
+			//怪物主属性
+			var iconF2 = iconF1.appendChild(document.createElement("div"));iconF2.className = "property";
+			iconF2.classList.add("property-" + mon.property[0]);
+			//怪物副属性
+			var iconF3 = iconF2.appendChild(document.createElement("div"));
+			if (mon.property.length>1)
+			{
+				iconF3.classList.add("subproperty");
+				iconF3.classList.add("subproperty-" + mon.property[1]);
+			}
+
 			var cellId = row1.insertCell();
 			cellId.className = "id";
 			cellId.appendChild(document.createTextNode("No."+mon.id));

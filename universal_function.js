@@ -100,3 +100,32 @@ function specialCharacterReplace(str)
     })
     return nstr;
 }
+
+//返回特殊的几个word会转错的
+function iconPosition(monid)
+{
+    switch(monid)
+    {
+        case 4414:
+            return [0,0];
+            break;
+        case 4415:
+            return [102,0];
+            break;
+        case 4416:
+            return [204,0];
+            break;
+        case 4417:
+            return [306,0];
+            break;
+        default:
+            var indexInThisPage = (monid-1) % 100;
+            var ix = indexInThisPage % 10;
+            var iy = parseInt(indexInThisPage / 10);
+            var position = [(96 + 6) * ix * -1,(96 + 6) * iy * -1];
+            if (monid == 3921){
+                console.log(indexInThisPage,ix,iy,position)
+            }
+            return position;
+    }
+}
