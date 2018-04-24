@@ -89,6 +89,7 @@ img{
 }
 .property-3{
 	background-position: -306px 0; /*光*/
+	b
 }
 .property-4{
 	background-position: -408px 0; /*暗*/
@@ -109,3 +110,186 @@ img{
 	background-position: -408px -102px; /*暗*/
 }
 /*宝珠*/
+
+
+body{
+	background: lightgreen;
+}
+/*宝珠*/
+/*所有宝珠层级的通用属性*/
+.block-box,.block,.blockCBp,.blockCBlight{
+	width:100%;height:100%;
+	border: #B33 1px solid;
+	box-sizing: border-box;
+	background-origin:content-box;
+	background-clip:content-box;
+}
+.block-box{
+	width:100px;height:100px;
+    position: relative;
+}
+/*宝珠内部元素*/
+.block,.blockCBlight,.blockCBp,.block-fire-1,.block-fire-2{
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+.block{
+	background-image: url(images/block/BLOCK2.PNG);
+}
+.blockCBp,.block-fire-1,.block-fire-2{
+	background-image: url(images/block/BLOCK2CB.PNG);
+}
+/*亮光动画*/
+@keyframes light
+{
+	0% {background-position: -200px -200px;}
+	90% {background-position: 0px 0px;}
+	100% {background-position: 0px 0px;}
+}
+/*点灯的光亮*/
+.blockCBlight{
+	background-image: linear-gradient(to bottom right, rgba(255,255,255,0) 30%, rgba(255,255,255,0.5) 45%, rgba(255,255,255,0.60) 55%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 70%);
+    background-size: 300px 300px;
+    background-position: -100px -100px;
+	animation: light 1.5s linear infinite;
+    
+    mask-image: url(images/block/BLOCK2CB.PNG);
+    mask-clip: content-box;
+    mask-origin: content-box;
+}
+/*点灯的加号*/
+.blockCBp{
+    left:51px;
+    top:51px;
+    width:49px;height:49px;
+	background-image: url(images/block/BLOCK2CB.PNG);
+     /*强化加号用的*/
+    background-position: -328px -104px;
+}
+.block-0 .block{ /*火珠*/
+	background-position: 0 0;
+}
+.block-1 .block{ /*强化火珠*/
+	background-position: 0 0;
+}
+.block-1 .blockCBlight{
+	mask-position: 0 0;
+}
+.block-2 .block{ /*水珠*/
+	background-position: -104px 0;
+}
+.block-3 .block{ /*强化水珠*/
+	background-position: -104px 0;
+}
+.block-3 .blockCBlight{
+	mask-position: -104px 0;
+}
+.block-4 .block{ /*木珠*/
+	background-position: -208px 0;
+}
+.block-5 .block{ /*强化木珠*/
+	background-position: -208px 0;
+}
+.block-5 .blockCBlight{
+	mask-position: -208px 0;
+}
+.block-6 .block{ /*光珠*/
+	background-position: -312px 0;
+}
+.block-7 .block{ /*强化光珠*/
+	background-position: -312px 0;
+}
+.block-7 .blockCBlight{
+	mask-position: -312px 0;
+}
+.block-8 .block{ /*暗珠*/
+	background-position: 0 -104px;
+}
+.block-9 .block{ /*强化暗珠*/
+	background-position: 0 -104px;
+}
+.block-9 .blockCBlight{
+	mask-position: 0 -104px;
+}
+.block-10 .block{ /*心珠*/
+	padding: 8px;
+	background-position: 0 -408px;
+}
+.block-11 .block{ /*强化心珠*/
+	padding: 8px;
+	background-position: 0 -408px;
+}
+.block-11 .blockCBlight{
+	padding: 8px;
+	mask-position: 0 -408px;
+}
+.block-12 .block{ /*废珠*/
+	padding: 9px;
+	background-position: -104px -104px;
+}
+/*炸弹动画*/
+@keyframes bomb
+{
+	0% {transform:scale(0.93,1);}
+	25% {transform:scale(0.95,0.90);}
+	50% {transform:scale(0.93,1);}
+	75% {transform:scale(1,0.90);}
+	100% {transform:scale(0.93,1);}
+}
+.block-13 .block{ /*炸弹*/
+    mask:none;
+    background-image: url(images/block/BLOCK2CB.PNG);
+	padding: 0 9px;
+	background-position: -416px 0;
+	animation: bomb1 4s linear infinite;
+}
+.block-13 .blockCBlight{
+    display:none;
+}
+.block-13 .blockCBp{
+    left:19px;
+    top:56px;
+    width:62px;height:34px;
+	background-position: -156px -196px;
+}
+@keyframes fire
+{
+	0% {opacity:0;transform:rotate(0) scale(0.8,1);}
+	10% {opacity:1;}
+	20% {opacity:1;}
+	30% {opacity:0;}
+	40% {opacity:1;}
+	50% {opacity:0;transform:rotate(180deg) scale(1,0.8);}
+	60% {opacity:1;}
+	70% {opacity:0;}
+	80% {opacity:1;}
+	90% {opacity:1;}
+	100% {opacity:0;transform:rotate(360deg) scale(0.8,1);}
+}
+.block-fire-1{
+    left: 40px; top: -10px;
+    width:44px;height:34px;
+	background-position: -156px -232px;
+	transform-origin: 24px 16px;
+	animation: fire 0.5s linear infinite;
+}
+.block-fire-2{
+    left: 48px; top: -7px;
+    width:33px;height:28px;
+	background-position: -329px -160px;
+	transform-origin: 15px 14px;
+	animation: fire 0.3s linear infinite 0.2s reverse;
+}
+.block-14 .block{ /*毒珠*/
+	padding: 5px;
+	background-position: 0 -312px;
+}
+.block-15 .block{ /*剧毒*/
+    mask:none;
+    background-image: url(images/block/BLOCK2CB.PNG);
+	background-position: 0 -208px;
+}
+.block-15 .blockCBlight,.block-15 .blockCBp{
+    display:none;
+}
