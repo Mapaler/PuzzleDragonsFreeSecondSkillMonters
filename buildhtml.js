@@ -54,7 +54,7 @@ function buildHTML(response)
 			if (mon.property.length>1)
 			{
 				//怪物副属性
-				var iconF3 = iconF2.appendChild(document.createElement("div"));
+				var iconF3 = iconF1.appendChild(document.createElement("div"));
 				iconF3.classList.add("subproperty");
 				iconF3.classList.add("subproperty-" + mon.property[1]);
 			}

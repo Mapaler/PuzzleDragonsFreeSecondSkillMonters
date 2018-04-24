@@ -32,6 +32,7 @@ a{
 .icon{
 	width: 110px;
 	height: 120px;
+	padding-left:5px;
 }
 .id{
 	width: 200px;
@@ -76,9 +77,12 @@ img{
 	height: 99px;
 	display: inline-block;
 	background-repeat: no-repeat;
+	position: relative;;
 }
 /*怪物属性*/
 .property,.subproperty{
+	position:absolute;
+	left:0;top:0;
 	width: 98px;
 	height: 99px;
 	display: inline-block;
@@ -96,25 +100,24 @@ img{
 }
 .property-3{
 	background-position: -306px 0; /*光*/
-	b
 }
 .property-4{
 	background-position: -408px 0; /*暗*/
 }
 .subproperty-0{
-	background-position: 0 -102px; /*火*/
+	background-position: 0 -104px; /*火*/
 }
 .subproperty-1{
-	background-position: -102px -102px; /*水*/
+	background-position: -102px -104px; /*水*/
 }
 .subproperty-2{
-	background-position: -204px -102px; /*木*/
+	background-position: -204px -104px; /*木*/
 }
 .subproperty-3{
-	background-position: -306px -102px; /*光*/
+	background-position: -306px -104px; /*光*/
 }
 .subproperty-4{
-	background-position: -408px -102px; /*暗*/
+	background-position: -408px -104px; /*暗*/
 }
 /*宝珠*/
 .block-box-real
