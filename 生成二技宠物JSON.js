@@ -304,6 +304,17 @@ function dealMonsterHTML(responseText) {
     monster.id = parseInt(/No\.(\d+)/ig.exec(monsterNameCard.querySelector("h3").textContent)[1]);
     monster.name = monsterNameCard.querySelector("h2").textContent; //怪物名
 
+    var monsterProperty = mosterInfo.rows[0].cells[1].querySelectorAll("img"); //怪物属性
+    for (var ii=0;ii<monsterProperty.length;ii++)
+    {
+        monsterProperty[ii]
+    }
+    var monsterType = mosterInfo.rows[0].cells[2].querySelectorAll("img"); //怪物类型
+    for (var ii=0;ii<monsterProperty.length;ii++)
+    {
+        
+    }
+
     var skill = content.querySelector("table:nth-of-type(5)"); //技能
     var skillInfoLine = skill.rows[0];
     skillObj.name = skillInfoLine.cells[0].querySelector("span").textContent; //技能名称
