@@ -103,7 +103,9 @@ function buildHTML(response)
 						}
 						break;
 					case 3:
-						var blockBox = cellSkillText.appendChild(document.createElement("div")); //珠子
+						var blockBoxR = cellSkillText.appendChild(document.createElement("div")); //珠子
+						blockBoxR.className = "block-box-real";
+						var blockBox = blockBoxR.appendChild(document.createElement("div")); //珠子
 						blockBox.className = "block-box block-" + ifo.index;
 						var block1 = blockBox.appendChild(document.createElement("div")); //珠子
 						block1.className = "block";
@@ -121,9 +123,10 @@ function buildHTML(response)
 								var blockFire2 = block1.appendChild(document.createElement("div")); //点灯层
 								blockFire2.className = "block-fire-2";
 							}
-							//var block3 = block2.appendChild(document.createElement("div")); //点灯层
-							//block3.className = "blockCBa blockCBa-" + ifo.index;
 						}
+						var txtSpan = blockBoxR.appendChild(document.createElement("span"));
+						txtSpan.className = "block-name";
+						txtSpan.appendChild(document.createTextNode(orbs[ifo.index].cname));
 						break;
 					default:
 						console.error("未知的类型",ifo);

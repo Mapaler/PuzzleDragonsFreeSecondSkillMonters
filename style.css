@@ -110,23 +110,28 @@ img{
 	background-position: -408px -102px; /*暗*/
 }
 /*宝珠*/
-
-
-body{
-	background: lightgreen;
+.block-box-real
+{
+	width:30px;height:20px;
+    display: inline-block;
 }
-/*宝珠*/
-/*所有宝珠层级的通用属性*/
-.block-box,.block,.blockCBp,.blockCBlight{
-	width:100%;height:100%;
-	border: #B33 1px solid;
-	box-sizing: border-box;
-	background-origin:content-box;
-	background-clip:content-box;
+.block-name{
+	font-size:0;
+    line-height:0;
+    position: absolute;
 }
 .block-box{
 	width:100px;height:100px;
+    left: -35px;top: -37px;
     position: relative;
+    transform: scale(0.30);
+}
+/*所有宝珠层级的通用属性*/
+.block,.blockCBp,.blockCBlight{
+	width:100%;height:100%;
+	box-sizing: border-box;
+	background-origin:content-box;
+	background-clip:content-box;
 }
 /*宝珠内部元素*/
 .block,.blockCBlight,.blockCBp,.block-fire-1,.block-fire-2{
@@ -134,11 +139,8 @@ body{
     left:0px;
     top:0px;
 }
-.block{
+.block,.blockCBp,.block-fire-1,.block-fire-2{
 	background-image: url(images/block/BLOCK2.PNG);
-}
-.blockCBp,.block-fire-1,.block-fire-2{
-	background-image: url(images/block/BLOCK2CB.PNG);
 }
 /*亮光动画*/
 @keyframes light
@@ -154,7 +156,7 @@ body{
     background-position: -100px -100px;
 	animation: light 1.5s linear infinite;
     
-    mask-image: url(images/block/BLOCK2CB.PNG);
+    mask-image: url(images/block/BLOCK2.PNG);
     mask-clip: content-box;
     mask-origin: content-box;
 }
@@ -163,7 +165,7 @@ body{
     left:51px;
     top:51px;
     width:49px;height:49px;
-	background-image: url(images/block/BLOCK2CB.PNG);
+	background-image: url(images/block/BLOCK2.PNG);
      /*强化加号用的*/
     background-position: -328px -104px;
 }
@@ -239,10 +241,9 @@ body{
 }
 .block-13 .block{ /*炸弹*/
     mask:none;
-    background-image: url(images/block/BLOCK2CB.PNG);
 	padding: 0 9px;
 	background-position: -416px 0;
-	animation: bomb1 4s linear infinite;
+	animation: bomb 4s linear infinite;
 }
 .block-13 .blockCBlight{
     display:none;
@@ -255,8 +256,8 @@ body{
 }
 @keyframes fire
 {
-	0% {opacity:0;transform:rotate(0) scale(0.8,1);}
-	10% {opacity:1;}
+	0% {opacity:0; transform:rotate(0) scale(0.8,1);}
+	5% {opacity:1;}
 	20% {opacity:1;}
 	30% {opacity:0;}
 	40% {opacity:1;}
@@ -287,7 +288,6 @@ body{
 }
 .block-15 .block{ /*剧毒*/
     mask:none;
-    background-image: url(images/block/BLOCK2CB.PNG);
 	background-position: 0 -208px;
 }
 .block-15 .blockCBlight,.block-15 .blockCBp{
