@@ -1,4 +1,10 @@
-﻿dt{
+﻿body{
+	background:url(images/MENUPARTS0.PNG);
+    background-size: 160%;
+    color:white;
+    text-shadow: 0 0 3px black;
+}
+dt{
 	font-size: 2em;
 	color:white;
 	background: #B33;
@@ -13,6 +19,7 @@ dl dt:first-child
 }
 table{
 	width: 100%;
+	background: rgba(255,255,255,0.3);
 	border-bottom: 3px solid brown;
 	border-collapse:collapse;
 }
