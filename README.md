@@ -9,5 +9,5 @@ https://mapaler.github.io/PuzzleDragonsFreeSecondSkillMonters/
   按格式在`生成二技宠物JSON.js`内添加新怪物的id，然后在[战友网](http://pad.skyozora.com/)任意页面执行`生成二技宠物JSON.js`，并等待生成最新的怪物列表（数据获取状态可以从控制台查看）。  
   用Word将上述代码转换为简体，并完全替换`monsters.json`。
 * **更新图片**  
-  执行`下载图片BAT前导.bat`，下载用到的图片，需先编辑此文件内的aria2路径。
+  在Windows下直接执行`Aria2-获取图片下载列表文件.js`，生成三个下载列表。将[aria2c.exe](https://github.com/aria2/aria2/releases)复制到本项目根目录，然后执行需要更新图片的对应`Aria2下载-XX图片.bat`下载用到的图片。
 * 这样应该就更新完了
