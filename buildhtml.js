@@ -74,7 +74,7 @@ function buildHTML(response)
 			var cellSkillText = row2.insertCell();
 			cellSkillText.className = "skill-detail";
 			cellSkillText.colSpan = 3;
-			mon.skill.text.forEach(function(ifo){
+			mon.skill.text.forEach(function(ifo,idx,arr){
 				switch(ifo.type)
 				{
 					case 0:
@@ -86,21 +86,9 @@ function buildHTML(response)
 					case 2:
 						var img = cellSkillText.appendChild(document.createElement("img"));
 						img.className = "icon-in-txt"
-						if (ifo.type == 2) //转换为
-						{
-							img.className = "change-in-txt"
-							img.src = "images/change.gif";
-							img.alt = img.title = "→";
-						}else if(ifo.type == 3) //宝珠
-						{
-							img.src = "images/drops/" + orbs[ifo.index].name + ".png";
-							img.alt = img.title = orbs[ifo.index].cname;
-						}else if(ifo.type == 4) //觉醒
-						{
-							img.src = "images/skill_icon/skill-" + PrefixInteger(ifo.index+1,2) + ".png";
-							img.alt = img.title = awokens[ifo.index].cname;
-							cellSkillText.appendChild(document.createTextNode(img.alt + " "));
-						}
+						img.className = "change-in-txt"
+						img.src = "images/change.gif";
+						img.alt = img.title = "→";
 						break;
 					case 3:
 						var blockBoxR = cellSkillText.appendChild(document.createElement("div")); //珠子
@@ -108,25 +96,42 @@ function buildHTML(response)
 						var blockBox = blockBoxR.appendChild(document.createElement("div")); //珠子
 						blockBox.className = "block-box block-" + ifo.index;
 						blockBox.title = orbs[ifo.index].cname;
-						var block1 = blockBox.appendChild(document.createElement("div")); //珠子
-						block1.className = "block";
+						var block = blockBox.appendChild(document.createElement("div")); //珠子
+						block.className = "block";
 						var blockLight = blockBox.appendChild(document.createElement("div")); //点灯的光亮层
 						blockLight.className = "blockCBlight";
-						var block2 = blockBox.appendChild(document.createElement("div")); //点灯层
-						block2.className = "blockCBp";
-						var blockFire1 = block1.appendChild(document.createElement("div")); //点灯层
+						var blockLock = blockBox.appendChild(document.createElement("div")); //锁层
+						blockLock.className = "blockLock";
+						var blockPlus = blockBox.appendChild(document.createElement("div")); //点灯层
+						blockPlus.className = "blockCBp";
+						var blockFire1 = block.appendChild(document.createElement("div")); //点灯层
 						blockFire1.className = "block-fire-1";
-						var blockFire2 = block1.appendChild(document.createElement("div")); //点灯层
+						var blockFire2 = block.appendChild(document.createElement("div")); //点灯层
 						blockFire2.className = "block-fire-2";
 						var txtSpan = blockBoxR.appendChild(document.createElement("span"));
 						txtSpan.className = "block-name";
 						txtSpan.appendChild(document.createTextNode(orbs[ifo.index].cname));
+						for (var ii=idx+1;ii<arr.length;ii++)
+						{
+							if (arr[ii].type != 3)
+							{
+								if (arr[ii].type == 0 && arr[ii].text.indexOf("锁定") == 0)
+								{
+									blockBox.classList.add("block-lock");
+								}else
+								{
+									break;
+								}
+							}
+						}
+
 						break;
 					case 4:
 						var awBox = cellSkillText.appendChild(document.createElement("div")); //珠子
 						awBox.className = "awoken";
 						awBox.classList.add("awoken-" + ifo.index);
 						awBox.title = awokens[ifo.index].cname;
+						cellSkillText.appendChild(document.createTextNode(awBox.title + " "));
 					default:
 						console.error("未知的类型",ifo);
 				}
@@ -141,6 +146,7 @@ function buildHTML(response)
 			{
 				mon.awokens.forEach(function(awoken){
 					var jxiconLink = cellJX.appendChild(document.createElement("a"));
+					jxiconLink.className = "awoken-link";
 					jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
 					jxiconLink.target = "_blank";
 					var awBox = jxiconLink.appendChild(document.createElement("div")); //珠子
