@@ -51,11 +51,11 @@ function buildHTML(response)
 			//怪物主属性
 			var iconF2 = iconF1.appendChild(document.createElement("div"));iconF2.className = "property";
 			iconF2.classList.add("property-" + mon.property[0]);
+			//怪物副属性
+			var iconF3 = iconF1.appendChild(document.createElement("div"));
+			iconF3.classList.add("subproperty");
 			if (mon.property.length>1)
 			{
-				//怪物副属性
-				var iconF3 = iconF1.appendChild(document.createElement("div"));
-				iconF3.classList.add("subproperty");
 				iconF3.classList.add("subproperty-" + mon.property[1]);
 			}
 
@@ -109,21 +109,14 @@ function buildHTML(response)
 						blockBox.className = "block-box block-" + ifo.index;
 						var block1 = blockBox.appendChild(document.createElement("div")); //珠子
 						block1.className = "block";
-						if (ifo.index%2)
-						{
-							block1.classList.add("blockCB");
-							var blockLight = blockBox.appendChild(document.createElement("div")); //点灯的光亮层
-							blockLight.className = "blockCBlight";
-							var block2 = blockBox.appendChild(document.createElement("div")); //点灯层
-							block2.className = "blockCBp";
-							if (ifo.index == 13) //炸弹
-							{
-								var blockFire1 = block1.appendChild(document.createElement("div")); //点灯层
-								blockFire1.className = "block-fire-1";
-								var blockFire2 = block1.appendChild(document.createElement("div")); //点灯层
-								blockFire2.className = "block-fire-2";
-							}
-						}
+						var blockLight = blockBox.appendChild(document.createElement("div")); //点灯的光亮层
+						blockLight.className = "blockCBlight";
+						var block2 = blockBox.appendChild(document.createElement("div")); //点灯层
+						block2.className = "blockCBp";
+						var blockFire1 = block1.appendChild(document.createElement("div")); //点灯层
+						blockFire1.className = "block-fire-1";
+						var blockFire2 = block1.appendChild(document.createElement("div")); //点灯层
+						blockFire2.className = "block-fire-2";
 						var txtSpan = blockBoxR.appendChild(document.createElement("span"));
 						txtSpan.className = "block-name";
 						txtSpan.appendChild(document.createTextNode(orbs[ifo.index].cname));

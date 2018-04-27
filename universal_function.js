@@ -107,6 +107,6 @@ function iconPosition(monid)
     var indexInThisPage = (monid-1) % 100;
     var ix = indexInThisPage % 10;
     var iy = parseInt(indexInThisPage / 10);
-    var position = [(96 + 6) * ix * -1,(96 + 6) * iy * -1];
+    var position = [(100 + 2) * ix * -1,(100 + 2) * iy * -1];
     return position;
 }
