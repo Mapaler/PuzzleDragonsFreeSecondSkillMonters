@@ -83,7 +83,7 @@ function buildHTML(response)
 					case 1:
 						cellSkillText.appendChild(document.createElement("br"));
 						break;
-					case 2:case 4:
+					case 2:
 						var img = cellSkillText.appendChild(document.createElement("img"));
 						img.className = "icon-in-txt"
 						if (ifo.type == 2) //转换为
@@ -107,6 +107,7 @@ function buildHTML(response)
 						blockBoxR.className = "block-box-real";
 						var blockBox = blockBoxR.appendChild(document.createElement("div")); //珠子
 						blockBox.className = "block-box block-" + ifo.index;
+						blockBox.title = orbs[ifo.index].cname;
 						var block1 = blockBox.appendChild(document.createElement("div")); //珠子
 						block1.className = "block";
 						var blockLight = blockBox.appendChild(document.createElement("div")); //点灯的光亮层
@@ -121,6 +122,11 @@ function buildHTML(response)
 						txtSpan.className = "block-name";
 						txtSpan.appendChild(document.createTextNode(orbs[ifo.index].cname));
 						break;
+					case 4:
+						var awBox = cellSkillText.appendChild(document.createElement("div")); //珠子
+						awBox.className = "awoken";
+						awBox.classList.add("awoken-" + ifo.index);
+						awBox.title = awokens[ifo.index].cname;
 					default:
 						console.error("未知的类型",ifo);
 				}
@@ -137,9 +143,10 @@ function buildHTML(response)
 					var jxiconLink = cellJX.appendChild(document.createElement("a"));
 					jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
 					jxiconLink.target = "_blank";
-					var jxicon = jxiconLink.appendChild(document.createElement("img"));
-					jxicon.src = "images/skill_icon/skill-" + PrefixInteger(awoken+1,2) + ".png";
-					jxiconLink.alt = jxiconLink.title = awokens[awoken].cname;
+					var awBox = jxiconLink.appendChild(document.createElement("div")); //珠子
+					awBox.className = "awoken";
+					awBox.classList.add("awoken-" + awoken);
+					awBox.title = awokens[awoken].cname;
 				})
 			}
 			var cellBonus = row1.insertCell();
