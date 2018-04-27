@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" /> 
+<title></title> 
+</head> 
+<body> 
+<!--Dr.COMWebLoginID_0.htm-->
+<script type="text/javascript"> 
+carrier='';
+sv=0;sv1=0;v6='http://ip6.dr.com:9002/v6                               ';myv6ip='                                       ';v4serip='192.168.255.243';m46=0;v46ip='192.168.36.99'                          ;
+vid=0   ;mip=192168036099;Gno=0000;vlanid="0"   ;AC="";                          ipm="c0a8fff3";ss1="000d4808e613";ss2="0000";ss3="c0a82463";ss4="000000000000";ss5="192.168.36.99"  ;ss6="192.168.255.243";timet=1524814553; 
+
+authexenable=0;
+authtype=1;
+authloginport=80;
+authloginpath='';
+authloginparam='';
+authlogoutpath='';
+authlogoutport=80;
+queryport=80;
+isquery=0;
+querypath='';
+queryparam='';
+authhost='';
+authoffpost='';
+authsuccess='Dr.COMWebLoginID_3.htm';
+authuserfield='DDDDD';
+authpassfield='upass';
+
+portalid='CQ0300503_000';
+serialno='';
+portalname='重庆第三军医大学';
+logourl='';
+bannerurl='a59.png';
+welcome='';
+businessurl='';
+portalver='0010300000';
+
+var reg = new RegExp("(^|&)drcomver([^&]*)(&|$)", "i");
+var r = window.location.search.substr(1).match(reg);
+if(r != null)
+{
+	document.write("portalname="+portalname+"<br>");
+	document.write("portalide="+portalid+"<br>");
+	document.write("portalver="+portalver+"<br>");
+}else
+
+	location.href="0.htm"
+
+</script> 
+<div>您的设备已经禁止JAVASCRIPT<br>
+     请点击<a href="0.htm">这里</a>进入</div>
+</body> 
+</html>
