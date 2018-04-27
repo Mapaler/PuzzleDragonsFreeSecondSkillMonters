@@ -87,7 +87,7 @@ img{
 	height: 99px;
 	display: inline-block;
 	background-repeat: no-repeat;
-	background-image: url(images/cards/CARDFRAME2.PNG)
+	background-image: url(images/CARDFRAME2.PNG)
 }
 .property-0{
 	background-position: 0 0; /*火*/
@@ -150,7 +150,7 @@ img{
     top:0px;
 }
 .block,.blockCBp,.block-fire-1,.block-fire-2{
-	background-image: url(images/block/BLOCK2.PNG);
+	background-image: url(images/BLOCK2.PNG);
 }
 /*亮光动画*/
 @keyframes light
@@ -166,7 +166,7 @@ img{
     background-position: -100px -100px;
 	animation: light 1.5s linear infinite;
     
-    mask-image: url(images/block/BLOCK2.PNG);
+    mask-image: url(images/BLOCK2.PNG);
     mask-clip: content-box;
     mask-origin: content-box;
 }
@@ -175,7 +175,7 @@ img{
     left:51px;
     top:51px;
     width:49px;height:49px;
-	background-image: url(images/block/BLOCK2.PNG);
+	background-image: url(images/BLOCK2.PNG);
      /*强化加号用的*/
     background-position: -328px -104px;
 }
