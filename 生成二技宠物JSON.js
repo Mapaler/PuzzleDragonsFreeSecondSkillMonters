@@ -312,8 +312,8 @@ function dealMonsterHTML(responseText) {
     var monsterNameCard = monsterIconNameTable.rows[0].cells[1];
     monster.id = parseInt(/No\.(\d+)/ig.exec(monsterNameCard.querySelector("h3").textContent)[1]);
     monster.name = monsterNameCard.querySelector("h2").textContent; //怪物名
-    var starTxt = monsterNameCard.lastChild.textContent;
-    monster.star = starTxt.split('').filter(function(c){return c == "★"}).length;
+    var rareTxt = monsterNameCard.lastChild.textContent;
+    monster.rare = rareTxt.split('').filter(function(c){return c == "★"}).length;
 
     monster.property = [];
     var monsterProperty = mosterInfo.rows[0].cells[1].querySelectorAll("img"); //怪物属性

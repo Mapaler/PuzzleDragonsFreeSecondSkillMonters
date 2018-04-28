@@ -28,7 +28,7 @@ table{
 a{
 	text-decoration:none;
 }
-.icon,.id,.skill-name,.skill-cd,.jx,.bonus{
+.icon,.id,.rare,.type,.skill-name,.skill-cd,.jx,.bonus{
 	border-top: 3px solid brown;
 }
 .icon{
@@ -36,7 +36,13 @@ a{
 	padding-left:5px;
 }
 .id{
-	width: 200px;
+	width: 70px;
+}
+.rare{
+	width: 30px;
+}
+.type{
+	width: 100px;
 }
 .skill-name{
 	width: 200px;
@@ -47,7 +53,7 @@ a{
 .bonus{
 	width: 100px;
 }
-.id,.name,.skill-name,.skill-cd,.skill-detail,.jx,.bonus{
+.id,.name,.rare,.type,.skill-name,.skill-cd,.skill-detail,.jx,.bonus{
 	border-left: 1px solid brown;
 	padding-left: 5px;
 }
@@ -79,6 +85,9 @@ img{
 	display: inline-block;
 	background-repeat: no-repeat;
 	position: relative;;
+}
+.rare-star{
+    text-shadow: none;
 }
 /*怪物属性*/
 .property,.subproperty{
@@ -329,7 +338,7 @@ img{
     display:none;
 }
 /*觉醒*/
-.awoken{
+.awoken,.type-box{ /*和类型*/
 	display:inline-block;
 	width:32px;height:32px;
     background-image: url(images/EGGS.PNG);
@@ -518,4 +527,48 @@ img{
 }
 .awoken-60{/*10c*/
 	background-position: -838px -254px;
+}
+/*类型*/
+.type-box{
+	display:inline-block;
+	width:32px;height:32px;
+    background-image: url(images/EGGS.PNG);
+	background-position: -766px -110px;
+    vertical-align: middle;
+}
+.type-0{/*龙*/
+	background-position: -978px -2px;
+}
+.type-1{/*神*/
+	background-position: -978px -38px;
+}
+.type-2{/*恶魔*/
+	background-position: -658px -110px;
+}
+.type-3{/*机械*/
+	background-position: -694px -110px;
+}
+.type-4{/*平衡*/
+	background-position: -530px -339px;
+}
+.type-5{/*攻击*/
+	background-position: -978px -74px;
+}
+.type-6{/*体力*/
+	background-position: -522px -374px;
+}
+.type-7{/*回复*/
+	background-position: -522px -410px;
+}
+.type-8{/*进化用*/
+	background-position: -534px -302px;
+}
+.type-9{/*能力觉醒用*/
+	background-position: -730px -110px;
+}
+.type-10{/*强化合成用*/
+	background-position: -802px -110px;
+}
+.type-11{/*贩卖用*/
+	background-position: -838px -110px;
 }

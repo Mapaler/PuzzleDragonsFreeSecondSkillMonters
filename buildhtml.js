@@ -62,8 +62,23 @@ function buildHTML(response)
 			var cellId = row1.insertCell();
 			cellId.className = "id";
 			cellId.appendChild(document.createTextNode("No."+mon.id));
+			var cellRare = row1.insertCell();
+			cellRare.className = "rare";
+			cellRare.appendChild(document.createTextNode(mon.rare));
+			var rareStar = cellRare.appendChild(document.createElement("span"));
+			rareStar.className = "rare-star";
+			rareStar.appendChild(document.createTextNode("⭐️"));
+			var cellType = row1.insertCell();
+			cellType.className = "type";
+			mon.type.forEach(function(tp){
+				var typeDiv = cellType.appendChild(document.createElement("div")); //类型
+				typeDiv.className = "type-box";
+				typeDiv.classList.add("type-" + tp);
+				typeDiv.title = types[tp].cname;
+			});
 			var cellName = row2.insertCell();
 			cellName.className = "name";
+			cellName.colSpan = 3;
 			cellName.appendChild(document.createTextNode(mon.name));
 			var cellSkillName = row1.insertCell();
 			cellSkillName.className = "skill-name";
@@ -124,7 +139,6 @@ function buildHTML(response)
 								}
 							}
 						}
-
 						break;
 					case 4:
 						var awBox = cellSkillText.appendChild(document.createElement("div")); //珠子
@@ -132,6 +146,7 @@ function buildHTML(response)
 						awBox.classList.add("awoken-" + ifo.index);
 						awBox.title = awokens[ifo.index].cname;
 						cellSkillText.appendChild(document.createTextNode(awBox.title + " "));
+						break;
 					default:
 						console.error("未知的类型",ifo);
 				}
