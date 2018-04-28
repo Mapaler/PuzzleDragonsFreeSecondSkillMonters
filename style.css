@@ -21,7 +21,7 @@ dl dt:first-child
 }
 table{
 	width: 100%;
-	background: rgba(255,255,255,0.3);
+	background: rgba(200,200,200,0.4);
 	border-bottom: 3px solid brown;
 	border-collapse:collapse;
 }
