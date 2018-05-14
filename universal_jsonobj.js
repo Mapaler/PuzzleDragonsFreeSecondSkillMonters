@@ -89,7 +89,7 @@ var propertys = [
 {icon:"http://pad.skyozora.com/images/drops/Water.png",name:"Water",cname:"水"},
 {icon:"http://pad.skyozora.com/images/drops/Wood.png",name:"Wood",cname:"木"},
 {icon:"http://pad.skyozora.com/images/drops/Light.png",name:"Light",cname:"光"},
-{icon:"http://pad.skyozora.com/images/drops/Dark.png",name:"Dark",cname:"暗"},
+{icon:"http://pad.skyozora.com/images/drops/Dark.png",name:"Dark",cname:"暗"}
 ];
 
 //储存的是类型
@@ -105,5 +105,5 @@ var types = [
 {icon:"http://pad.skyozora.com/images/type/evo.png",name:"evo",jname:"進化用",cname:"进化用"},
 {icon:"http://pad.skyozora.com/images/type/aw.png",name:"aw",jname:"能力覚醒用",cname:"能力觉醒用"},
 {icon:"http://pad.skyozora.com/images/type/power.png",name:"power",jname:"強化合成用",cname:"强化合成用"},
-{icon:"http://pad.skyozora.com/images/type/sell.png",name:"sell",jname:"売却用",cname:"贩卖用"},
+{icon:"http://pad.skyozora.com/images/type/sell.png",name:"sell",jname:"売却用",cname:"贩卖用"}
 ];
