@@ -101,7 +101,7 @@ function specialCharacterReplace(str)
     return nstr;
 }
 
-//返回特殊的几个word会转错的
+//根据id返回宠物图标的坐标
 function iconPosition(monid)
 {
     var indexInThisPage = (monid-1) % 100;
