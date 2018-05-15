@@ -1,6 +1,6 @@
 # 智龙迷城免费二技宠列表 
 ## 在线查看
-普通版本： https://mapaler.github.io/PuzzleDragonsFreeSecondSkillMonters/
+普通版本： https://mapaler.github.io/PuzzleDragonsFreeSecondSkillMonters/  
 高级版本： https://mapaler.github.io/PuzzleDragonsFreeSecondSkillMonters/advanced.html
 
 ## 更新数据方式
