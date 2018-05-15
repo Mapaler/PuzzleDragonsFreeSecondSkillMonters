@@ -45,7 +45,7 @@ function buildHTML(response)
 			lnk.alt = lnk.title = mon.name;
 			//怪物头像部分
 			var iconF1 = lnk.appendChild(document.createElement("div"));iconF1.className = "icon-link";
-			iconF1.style.backgroundImage = "url(images/cards/CARDS_" + PrefixInteger(Math.ceil(mon.id/100),3) + ".png)";
+			iconF1.style.backgroundImage = "url(images/cards/CARDS_" + PrefixInteger(Math.ceil(mon.id/100),3) + ".PNG)";
 			var position = iconPosition(mon.id);
 			iconF1.style.backgroundPosition = position.map(function(p){return p + "px";}).join(" ");
 			//怪物主属性
