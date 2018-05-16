@@ -115,15 +115,17 @@ function buildHTML(response)
 			})
 			if (wepon)
 			{
-				mon.awokens.forEach(function(awoken){
-					var jxiconLink = cellJX.appendChild(document.createElement("a"));
-					jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
-					jxiconLink.target = "_blank";
-					var jxicon = jxiconLink.appendChild(document.createElement("img"));
-					jxicon.src = "images/skill_icon/skill-" + PrefixInteger(awoken+1,2) + ".png";
-					jxiconLink.alt = jxiconLink.title = awokens[awoken].cname;
-				})
+				cellJX.classList.add("wepon");
 			}
+			mon.awokens.forEach(function(awoken){
+				var jxiconLink = cellJX.appendChild(document.createElement("a"));
+				jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
+				jxiconLink.target = "_blank";
+				var jxicon = jxiconLink.appendChild(document.createElement("img"));
+				jxicon.src = "images/skill_icon/skill-" + PrefixInteger(awoken+1,2) + ".png";
+				jxiconLink.alt = jxiconLink.title = awokens[awoken].cname;
+			})
+			
 			var cellBonus = row1.insertCell();
 			cellBonus.rowSpan = 2;
 			cellBonus.className = "bonus";

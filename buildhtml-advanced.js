@@ -159,17 +159,19 @@ function buildHTML(response)
 			})
 			if (wepon)
 			{
-				mon.awokens.forEach(function(awoken){
-					var jxiconLink = cellJX.appendChild(document.createElement("a"));
-					jxiconLink.className = "awoken-link";
-					jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
-					jxiconLink.target = "_blank";
-					var awBox = jxiconLink.appendChild(document.createElement("div")); //珠子
-					awBox.className = "awoken";
-					awBox.classList.add("awoken-" + awoken);
-					awBox.title = awokens[awoken].cname;
-				})
+				cellJX.classList.add("wepon");
 			}
+			mon.awokens.forEach(function(awoken){
+				var jxiconLink = cellJX.appendChild(document.createElement("a"));
+				jxiconLink.className = "awoken-link";
+				jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
+				jxiconLink.target = "_blank";
+				var awBox = jxiconLink.appendChild(document.createElement("div")); //珠子
+				awBox.className = "awoken";
+				awBox.classList.add("awoken-" + awoken);
+				awBox.title = awokens[awoken].cname;
+			})
+			
 			var cellBonus = row1.insertCell();
 			cellBonus.rowSpan = 2;
 			cellBonus.className = "bonus";

@@ -50,6 +50,9 @@ a{
 .skill-cd{
 	width: 130px;
 }
+.jx.wepon{
+	background: rgba(150,70,70,0.8);
+}
 .bonus{
 	width: 100px;
 }
