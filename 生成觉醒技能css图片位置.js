@@ -1,11 +1,11 @@
-var sx = 622;	//初始x
-var sy = 146;	//初始y
+var sx = 518;	//初始x
+var sy = 38;	//初始y
 var w = 32;var h = 32;//每个区域的宽度
 var ws = 4;var hs = 4;//每个区域的间隔
-var skn = 3; //跳过开头的个数
+var lx = 14;	//横向个数
+var ly = 13;	//纵向个数
+var skn = 2; //跳过开头的个数
 
-var lx = 11;	//横向个数
-var ly = 10;	//纵向个数
 var lxn = 1; //记录是第几列了
 var lyn = 1; //记录是第几行了
 var row = false; //记录是行还是列
