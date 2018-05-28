@@ -25,8 +25,8 @@ table{
 	border-bottom: 3px solid brown;
 	border-collapse:collapse;
 }
-a{
-	text-decoration:none;
+.jump{
+	color: white;
 }
 .icon,.id,.rare,.type,.skill-name,.skill-cd,.jx,.bonus{
 	border-top: 3px solid brown;
