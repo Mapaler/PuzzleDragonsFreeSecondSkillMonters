@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>P&amp;D Helper 默认队长技能列表</title>
+<link rel="stylesheet" href="style-leaderSkill.css" />
+<script src="universal_jsonobj.js" type="text/javascript"></script>
+<script src="universal_function.js" type="text/javascript"></script>
+<script src="buildhtml-leaderSkill.js" type="text/javascript"></script>
+</head>
+<body>
+<ul>
+	<li>下载<a href="https://play.google.com/store/apps/details?id=com.lt.padhelper" class="jump" target="_blank">P&amp;D Helper</a></li>
+	<li>Profiles介绍
+		<ul>
+			<li>Color应该就是普通的单色或者杂色设置，Preset是使用预置，就是本列表的内容了</li>
+			<li>ROW是一横，L-Shape就是L，TPA应该就是双体攻击(U)的意思</li>
+			<li>恢复模式里，Column是一竖，以前还有Cross表示十字，现在已经删除了。需要用十字心可以去Preset里找Myr (<span class="dropName-Rcv">Rcv</span>)或者其他十字心队长</li>
+			<li>排除模式就是不要转掉哪种珠（无天降的情况下是一定不会转掉的，天降就看运气了），Mrt是剧毒，炸弹是本回合一定要转掉的所以不能排除。</li>
+		</ul>
+	</li>
+	<li>Options介绍
+		<ul>
+			<li>Max path length 表示分析路线的最大长度，长了叠在一起不好看清，但是短了就拉不出高C。嫌线路粗了看不清，可以在本体程序的Options里改Path drawing size来修改线路的宽度。</li>
+			<li>Max combos 是限制最高C，用来在不要超过多少C的时候用（天降就看运气了）</li>
+			<li>Path number scaling 时每次分析计算几个不同路线，可以在本体程序首页的Store购买远程分析服务加快速度（需能上谷歌），按月付费。</li>
+			<li>Manual Mode - Orb Change 用来手动设置珠色，一般用来把银镜或云下面看不到的珠子设置上去。</li>
+			<li>Manual Mode - Starting Orbs 用来修改起始珠，被指定起手珠时用。</li>
+			<li>Manual Mode - Avoid Orbs 在珠位上面点击切换该珠位的特殊状态，“-”表示封条，“×”表示无法消除，“○”表示不停变换。设定后，分析时会根据情况跳过不能消除的珠。</li>
+			<li>Manual Mode - Toggle board consistence 去掉后将直接操纵真实版面，用来切换出去看黑屏下面真实的珠子是什么。</li>
+			<li>Starting path Mode是用来设置固定的开始路径的，不知道有啥用，我一般是用来预练习转珠。</li>
+		</ul>
+	</li>
+</ul>
+<dl id="monsters"></dl>
+</body>
+</html>

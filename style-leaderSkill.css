@@ -1,0 +1,549 @@
+﻿body{
+	background: #101010;
+	color:white;
+    text-shadow: 0 0 3px black;
+}
+.jump{
+	color: white;
+}
+table{
+	width: 100%;
+	border-bottom: 3px solid #4F4F4F;
+	border-collapse:collapse;
+}
+
+table td{
+	padding: 5px;
+}
+.enName,.icon,.id,.skill-detail{
+	border-top: 3px solid #4F4F4F;
+}
+.enName{
+	font-weight: bold;
+	width: 200px;
+}
+.dropName-Fr{color: #F44;} /*火珠*/
+.dropName-Wt{color: #09C;} /*水珠*/
+.dropName-Wd{color: #9C0;} /*木珠*/
+.dropName-Lt{color: #FF4;} /*光珠*/
+.dropName-Dk{color: #A6C;} /*暗珠*/
+.dropName-Rcv{color: #FF69B4;} /*心珠*/
+.dropName-Jm{color: #AAA;} /*废珠*/
+.dropName-Psn{color: #C720C7;} /*毒珠*/
+.dropName-Mrt{color: #5E0069;} /*剧毒*/
+.dropName-Bon{color: #777;} /*炸弹*/
+
+.icon{
+	width: 100px;
+}
+.id{
+	width: 200px;
+}
+.name,.id,.icon,.skill-detail{
+	border-left: 1px solid #4F4F4F;
+	padding-left: 5px;
+}
+.name{
+	border-top: 1px solid #4F4F4F;
+}
+.icon-in-txt
+{
+	width:30px;
+	height:30px;
+}
+img{
+	vertical-align: middle;
+}
+.icon-link{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	position: relative;;
+}
+/*怪物属性*/
+.property,.subproperty{
+	position:absolute;
+	left:0;top:0;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-image: url(images/CARDFRAME2.PNG);
+	background-position: 100px 100px; /*都不显示*/
+}
+.property-0{
+	background-position: 0 0; /*火*/
+}
+.property-1{
+	background-position: -102px 0; /*水*/
+}
+.property-2{
+	background-position: -204px 0; /*木*/
+}
+.property-3{
+	background-position: -306px 0; /*光*/
+}
+.property-4{
+	background-position: -408px 0; /*暗*/
+}
+.subproperty-0{
+	background-position: 0 -104px; /*火*/
+}
+.subproperty-1{
+	background-position: -102px -104px; /*水*/
+}
+.subproperty-2{
+	background-position: -204px -104px; /*木*/
+}
+.subproperty-3{
+	background-position: -306px -104px; /*光*/
+}
+.subproperty-4{
+	background-position: -408px -104px; /*暗*/
+}
+/*宝珠*/
+.block-box-real
+{
+	width:32px;height:32px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.block-name{
+	font-size:0;
+    line-height:0;
+    position: absolute;
+}
+.block-box{
+	width:104px;height:104px;
+    left: -36px;top: -36px;
+    position: relative;
+    transform: scale(0.3077);
+}
+/*所有宝珠层级的通用属性*/
+.block,.blockCBlight{
+	width:100%;height:100%;
+	box-sizing: border-box;
+	background-origin:content-box;
+	background-clip:content-box;
+}
+/*宝珠内部元素*/
+.block,.blockCBlight,.blockLock,.blockCBp,.block-fire-1,.block-fire-2{
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+.block{
+	background-image: url(images/BLOCK2.PNG);
+}
+.blockCBp,.block-fire-1,.block-fire-2,
+.block-1 .block,.block-3 .block,.block-5 .block,.block-7 .block,.block-9 .block,.block-11 .block{
+	background-image: url(images/BLOCK2CB.PNG);
+}
+.block-lock .blockLock{
+	background-image: url(images/BLOCK2CB.PNG);
+    width:43px;height:52px;
+    background-position: -104px -452px;
+}
+.blockCBlight{
+	display: none;
+}
+.blockCBp,.block-fire-1,.block-fire-2{
+	display: none;
+}
+/*点灯的光亮*/
+/*亮光动画*/
+@keyframes light
+{
+	0% {background-position: -200px -200px;}
+	90% {background-position: 0px 0px;}
+	100% {background-position: 0px 0px;}
+}
+.block-1 .blockCBlight,.block-3 .blockCBlight,.block-5 .blockCBlight,.block-7 .blockCBlight,.block-9 .blockCBlight,.block-11 .blockCBlight{
+    display: inline-block;
+	background-image: linear-gradient(to bottom right, rgba(255,255,255,0) 33%, rgba(255,255,255,0.3) 38%, rgba(255,255,255,0.62) 43%, rgba(255,255,255,0.73) 50%, rgba(255,255,255,0.62) 57%, rgba(255,255,255,0.3) 62%, rgba(255,255,255,0) 67%);
+    background-size: 300px 300px;
+    background-position: -100px -100px;
+	animation: light 1.5s linear infinite;
+    
+    mask-image: url(images/BLOCK2CB.PNG);
+    mask-clip: content-box;
+    mask-origin: content-box;
+}
+/*点灯的加号*/
+.block-1 .blockCBp,.block-3 .blockCBp,.block-5 .blockCBp,.block-7 .blockCBp,.block-9 .blockCBp,.block-11 .blockCBp{
+    display: inline-block;
+    left:unset;
+    top:unset;
+    right:0;
+    bottom:0;
+    width:54px;height:54px;
+     /*强化加号用的*/
+    background-position: -328px -104px;
+}
+.block-0 .block{ /*火珠*/
+	background-position: -2px -2px;
+}
+.block-1 .block{ /*强化火珠*/
+	background-position: 0 0;
+}
+.block-1 .blockCBlight{
+	mask-position: 0 0;
+}
+.block-2 .block{ /*水珠*/
+	background-position: -104px 0;
+}
+.block-3 .block{ /*强化水珠*/
+	background-position: -104px 0;
+}
+.block-3 .blockCBlight{
+	mask-position: -104px 0;
+}
+.block-4 .block{ /*木珠*/
+	background-position: -208px 0;
+}
+.block-5 .block{ /*强化木珠*/
+	background-position: -208px 0;
+}
+.block-5 .blockCBlight{
+	mask-position: -208px 0;
+}
+.block-6 .block{ /*光珠*/
+	background-position: -312px 0;
+}
+.block-7 .block{ /*强化光珠*/
+	background-position: -312px 0;
+}
+.block-7 .blockCBlight{
+	mask-position: -312px 0;
+}
+.block-8 .block{ /*暗珠*/
+	background-position: 0 -104px;
+}
+.block-9 .block{ /*强化暗珠*/
+	background-position: 0 -104px;
+}
+.block-9 .blockCBlight{
+	mask-position: 0 -104px;
+}
+.block-10 .block{ /*心珠*/
+	padding: 8px;
+	background-position: 0 -408px;
+}
+.block-11 .block{ /*强化心珠*/
+	padding: 8px;
+	background-position: 0 -408px;
+}
+.block-11 .blockCBlight{
+	padding: 8px;
+	mask-position: 0 -408px;
+}
+.block-12 .block{ /*废珠*/
+	padding: 9px;
+	background-position: -104px -104px;
+}
+/*炸弹动画*/
+@keyframes bomb
+{
+	0% {transform:scale(0.93,1);}
+	25% {transform:scale(0.95,0.90);}
+	50% {transform:scale(0.93,1);}
+	75% {transform:scale(1,0.90);}
+	100% {transform:scale(0.93,1);}
+}
+.block-13 .block{ /*炸弹*/
+    mask:none;
+	padding: 0 9px;
+	background-position: -416px 0;
+	animation: bomb 4s linear infinite;
+}
+.block-13 .blockCBlight{
+    display:none;
+}
+.block-13 .blockCBp{ /*炸弹脸*/
+    display: inline-block;
+    left:19px;
+    top:56px;
+    width:66px;height:38px;
+	background-position: -156px -192px;
+}
+ /*炸弹火花*/
+@keyframes fire
+{
+	0% {opacity:0; transform:rotate(0) scale(0.8,1);}
+	5% {opacity:1;}
+	20% {opacity:1;}
+	30% {opacity:0;}
+	40% {opacity:1;}
+	50% {opacity:0;transform:rotate(180deg) scale(1,0.8);}
+	60% {opacity:1;}
+	70% {opacity:0;}
+	80% {opacity:1;}
+	90% {opacity:1;}
+	100% {opacity:0;transform:rotate(360deg) scale(0.8,1);}
+}
+.block-13 .block-fire-1{
+    display: inline-block;
+    left: 40px; top: -10px;
+    width:44px;height:34px;
+	background-position: -156px -232px;
+	transform-origin: 24px 16px;
+	animation: fire 0.5s linear infinite;
+}
+.block-13 .block-fire-2{
+    display: inline-block;
+    left: 48px; top: -7px;
+    width:33px;height:28px;
+	background-position: -329px -160px;
+	transform-origin: 15px 14px;
+	animation: fire 0.3s linear infinite 0.2s reverse;
+}
+.block-14 .block{ /*毒珠*/
+	padding: 5px;
+	background-position: 0 -312px;
+}
+.block-15 .block{ /*剧毒*/
+    mask:none;
+	background-position: 0 -208px;
+}
+.block-15 .blockCBlight,.block-15 .blockCBp{
+    display:none;
+}
+/*觉醒*/
+.awoken,.type-box{ /*和类型*/
+	display:inline-block;
+	width:32px;height:32px;
+    background-image: url(images/EGGS.PNG);
+	background-position: -622px -218px;
+    vertical-align: middle;
+}
+.awoken-0{/*HP+*/
+	background-position: -518px -110px;
+}
+.awoken-1{/*攻击+*/
+	background-position: -518px -146px;
+}
+.awoken-2{/*回复+*/
+	background-position: -518px -182px;
+}
+.awoken-3{/*火盾*/
+	background-position: -518px -218px;
+}
+.awoken-4{/*水盾*/
+	background-position: -518px -254px;
+}
+.awoken-5{/*木盾*/
+	background-position: -518px -290px;
+}
+.awoken-6{/*光盾*/
+	background-position: -518px -326px;
+}
+.awoken-7{/*暗盾*/
+	background-position: -518px -362px;
+}
+.awoken-8{/*自回*/
+	background-position: -518px -398px;
+}
+.awoken-9{/*防封*/
+	background-position: -518px -434px;
+}
+.awoken-10{/*防暗*/
+	background-position: -518px -470px;
+}
+.awoken-11{/*防废*/
+	background-position: -554px -38px;
+}
+.awoken-12{/*防毒*/
+	background-position: -590px -38px;
+}
+.awoken-13{/*火+*/
+	background-position: -626px -38px;
+}
+.awoken-14{/*水+*/
+	background-position: -662px -38px;
+}
+.awoken-15{/*木+*/
+	background-position: -698px -38px;
+}
+.awoken-16{/*光+*/
+	background-position: -734px -38px;
+}
+.awoken-17{/*暗+*/
+	background-position: -770px -38px;
+}
+.awoken-18{/*手指*/
+	background-position: -806px -38px;
+}
+.awoken-19{/*心解*/
+	background-position: -842px -38px;
+}
+.awoken-20{/*SB*/
+	background-position: -878px -38px;
+}
+.awoken-21{/*火横*/
+	background-position: -914px -38px;
+}
+.awoken-22{/*水横*/
+	background-position: -950px -38px;
+}
+.awoken-23{/*木横*/
+	background-position: -986px -38px;
+}
+.awoken-24{/*光横*/
+	background-position: -554px -74px;
+}
+.awoken-25{/*暗横*/
+	background-position: -554px -110px;
+}
+.awoken-26{/*U*/
+	background-position: -554px -146px;
+}
+.awoken-27{/*SX*/
+	background-position: -554px -182px;
+}
+.awoken-28{/*心+*/
+	background-position: -554px -218px;
+}
+.awoken-29{/*协力*/
+	background-position: -554px -254px;
+}
+.awoken-30{/*龙杀*/
+	background-position: -554px -290px;
+}
+.awoken-31{/*神杀*/
+	background-position: -554px -326px;
+}
+.awoken-32{/*恶魔杀*/
+	background-position: -554px -362px;
+}
+.awoken-33{/*机杀*/
+	background-position: -554px -398px;
+}
+.awoken-34{/*平衡杀*/
+	background-position: -554px -434px;
+}
+.awoken-35{/*攻击杀*/
+	background-position: -554px -470px;
+}
+.awoken-36{/*体力杀*/
+	background-position: -590px -74px;
+}
+.awoken-37{/*回复杀*/
+	background-position: -626px -74px;
+}
+.awoken-38{/*进化杀*/
+	background-position: -662px -74px;
+}
+.awoken-39{/*觉醒杀*/
+	background-position: -698px -74px;
+}
+.awoken-40{/*强化杀*/
+	background-position: -734px -74px;
+}
+.awoken-41{/*卖钱杀*/
+	background-position: -770px -74px;
+}
+.awoken-42{/*7c*/
+	background-position: -806px -74px;
+}
+.awoken-43{/*5色破防*/
+	background-position: -842px -74px;
+}
+.awoken-44{/*心追*/
+	background-position: -878px -74px;
+}
+.awoken-45{/*全体HP强化*/
+	background-position: -914px -74px;
+}
+.awoken-46{/*全体回复强化*/
+	background-position: -950px -74px;
+}
+.awoken-47{/*破无效*/
+	background-position: -986px -74px;
+}
+.awoken-48{/*武器觉醒*/
+	background-position: -590px -110px;
+}
+.awoken-49{/*3x3心追*/
+	background-position: -590px -146px;
+}
+.awoken-50{/*5色溜*/
+	background-position: -590px -182px;
+}
+.awoken-51{/*大防封*/
+	background-position: -590px -218px;
+}
+.awoken-52{/*大手指*/
+	background-position: -590px -254px;
+}
+.awoken-53{/*防云*/
+	background-position: -590px -290px;
+}
+.awoken-54{/*防封条*/
+	background-position: -590px -326px;
+}
+.awoken-55{/*大SB*/
+	background-position: -590px -362px;
+}
+.awoken-56{/*8血以上强化*/
+	background-position: -590px -398px;
+}
+.awoken-57{/*半血以下强化*/
+	background-position: -590px -434px;
+}
+.awoken-58{/*L盾*/
+	background-position: -590px -470px;
+}
+.awoken-59{/*L解锁*/
+	background-position: -626px -110px;
+}
+.awoken-60{/*10c*/
+	background-position: -662px -110px;
+}
+/*类型*/
+.type-box{
+	display:inline-block;
+	width:32px;height:32px;
+    background-image: url(images/EGGS.PNG);
+	background-position: -766px -110px;
+    vertical-align: middle;
+}
+.type-0{/*龙*/
+	background-position: -458px -194px;
+}
+.type-1{/*神*/
+	background-position: -458px -230px;
+}
+.type-2{/*恶魔*/
+	background-position: -458px -302px;
+}
+.type-3{/*机械*/
+	background-position: -458px -338px;
+}
+.type-4{/*平衡*/
+	background-position: -458px -86px;
+}
+.type-5{/*攻击*/
+	background-position: -458px -266px;
+}
+.type-6{/*体力*/
+	background-position: -458px -122px;
+}
+.type-7{/*回复*/
+	background-position: -458px -158px;
+}
+.type-8{/*进化用*/
+	background-position: -458px -50px;
+}
+.type-9{/*能力觉醒用*/
+	background-position: -458px -374px;
+}
+.type-10{/*强化合成用*/
+	background-position: -458px -446px;
+}
+.type-11{/*贩卖用*/
+	background-position: -582px -2px;
+}
+.type-12{/*特殊*/
+	background-position: -458px -410px;
+}
