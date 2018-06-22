@@ -143,6 +143,7 @@ var monsterList = [
         4396, //技能卡片・ 亞基達因
         4398, //K冰霜披風
         4444, //皮莫皮莫
+        4618, //晴空號
     ]},
     {group: "宠物交换所通过免费宠换的：第三方合作（限时）",ids: [
         4388, //摩爾迦納
@@ -168,7 +169,7 @@ var monsterList = [
         1082, //黄天的果实・柠檬龙
         1084, //紫天的果实・葡萄龙
     ]},
-    {group: "雷达搜索徽章奖励（全凭运气或者花钱购买徽章）",ids: [
+    {group: "雷达搜索徽章奖励（全凭运气，几率极低）",ids: [
         3173, //冥道之根源神・伊邪那岐Ｘ
         3175, //紫光的深淵龍・默示Ｘ
         3176, //山津神之子・神鵺
@@ -187,6 +188,8 @@ var monsterList = [
         3336, //木古龍・天貝爾＆龍喚士・托年
         3162, //蛋藏Ｘ覺醒幻神・奧丁
         3910, //瞬刻的白龍喚士・索妮亞＝艾璐
+        4297, //冥黑神・拉＝龍
+        4576, //水都之守護神・雅典娜
     ]},
     {group: "MP商店：不限时购买",ids: [
         3447, //火古龍的裝甲Ｘ龍喚士・安娜
@@ -487,20 +490,24 @@ function dealMonsterHTML(responseText) {
         }else return false;
     })
     */
+    
     monster.bonus = {lvtype:0,num:[0,0,0]}; //储存辅助同属性追加的数值BONUS
     var bonusCard = content.querySelector("table:nth-of-type(6)"); //bonus的卡
     var bonusList = bonusCard.rows[1].cells[0].querySelector("table"); //具体显示bonus的表格
-    var maxBonusLine = bonusList.rows[bonusList.rows.length - 1];
-    if (/（LV110＆\+297時）/igm.test(maxBonusLine.cells[3].textContent))
+    if (bonusList !== undefined)
     {
-        monster.bonus.lvtype = 1;
-    }
-    for (var bi=0;bi<3;bi++)
-    {
-        var numCell = maxBonusLine.cells[bi];
-        var numSpan = numCell.querySelector("span");
-        var numInt = parseInt(numSpan.textContent.replace("+",""));
-        monster.bonus.num[bi] = numInt;
+        var maxBonusLine = bonusList.rows[bonusList.rows.length - 1];
+        if (/（LV110＆\+297時）/igm.test(maxBonusLine.cells[3].textContent))
+        {
+            monster.bonus.lvtype = 1;
+        }
+        for (var bi=0;bi<3;bi++)
+        {
+            var numCell = maxBonusLine.cells[bi];
+            var numSpan = numCell.querySelector("span");
+            var numInt = parseInt(numSpan.textContent.replace("+",""));
+            monster.bonus.num[bi] = numInt;
+        }
     }
 
     monster.awokens = []; //储存觉醒
