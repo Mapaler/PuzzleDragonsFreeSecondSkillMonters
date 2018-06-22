@@ -38,6 +38,9 @@ function specialMonsterName(monid)
         case 3193:
             return "帝都之守护神・雅典娜";
             break;
+        case 4576:
+            return "水都之守护神・雅典娜";
+            break;
         case 4172:
             return "猎人♂・灭尽龙 X 装备";
             break;
