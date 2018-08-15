@@ -63,6 +63,8 @@ var awokenCname = [ //对应的中文简称
 	"L解锁",
 	"10c",
 	"c珠",
+	"语音",
+	"奖励增加",
 ]
 
 var table = document.querySelector("#wrapper > table:nth-of-type(3) table");
