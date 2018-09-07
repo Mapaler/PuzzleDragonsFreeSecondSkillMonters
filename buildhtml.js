@@ -1,23 +1,4 @@
-﻿var MainList;
-window.onload = function()
-{
-	MainList = document.getElementById("monsters");
-	GM_xmlhttpRequest({
-		method: "GET",
-		url:"monsters.json",
-		onload: function(response) {
-			buildHTML(response.response);
-		},
-		onerror: function(response) {
-			console.error("数据获取错误",response);
-		}
-	})
-}
-//数字补0
-function PrefixInteger(num, length) {  
-	return (Array(length).join('0') + num).slice(-length); 
-}
-function buildHTML(response)
+﻿function buildHTML(response)
 {
 	mdata = JSON.parse(response);
 	mdata.forEach(function(grp){

@@ -23,7 +23,10 @@ if (typeof(GM_xmlhttpRequest) == "undefined") {
         xhr.send(GM_param.data ? GM_param.data : null);
     }
 }
-
+//数字补0
+function PrefixInteger(num, length) {  
+	return (Array(length).join('0') + num).slice(-length); 
+}
 //返回特殊的几个word会转错的
 function specialMonsterName(monid)
 {

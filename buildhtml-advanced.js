@@ -1,23 +1,4 @@
-﻿var MainList;
-window.onload = function()
-{
-	MainList = document.getElementById("monsters");
-	GM_xmlhttpRequest({
-		method: "GET",
-		url:"monsters.json",
-		onload: function(response) {
-			buildHTML(response.response);
-		},
-		onerror: function(response) {
-			console.error("数据获取错误",response);
-		}
-	})
-}
-//数字补0
-function PrefixInteger(num, length) {  
-	return (Array(length).join('0') + num).slice(-length); 
-}
-function buildHTML(response)
+﻿function buildHTML(response)
 {
 	mdata = JSON.parse(response);
 	mdata.forEach(function(grp){
@@ -176,18 +157,24 @@ function buildHTML(response)
 			cellBonus.rowSpan = 2;
 			cellBonus.className = "bonus";
 			var bonusDetail = cellBonus.appendChild(document.createElement("div"));
-			bonusDetail.appendChild(document.createTextNode((mon.bonus.lvtype?"Lv110":"满等") + "+297时BONUS："));
-			var bonusName = ["HP","攻击力","回复力"];
-			for (var bi=0;bi<3;bi++)
+			if (mon.bonus != undefined)
 			{
-				var bonusNum = cellBonus.appendChild(document.createElement("div"));
-				var bn = mon.bonus.num[bi];
-				var bonusNameSpan = bonusNum.appendChild(document.createElement("span"));
-				bonusNameSpan.className = "bouns-name";
-				bonusNameSpan.appendChild(document.createTextNode(bonusName[bi]));
-				var bonusNumSpan = bonusNum.appendChild(document.createElement("span"));
-				bonusNumSpan.className = bn>0?"bouns-positive":"bouns-negative";
-				bonusNumSpan.appendChild(document.createTextNode((bn>0?"+":"") + bn));
+				bonusDetail.appendChild(document.createTextNode((mon.bonus.lvtype?"Lv110":"满等") + "+297时BONUS："));
+				var bonusName = ["HP","攻击力","回复力"];
+				for (var bi=0;bi<3;bi++)
+				{
+					var bonusNum = cellBonus.appendChild(document.createElement("div"));
+					var bn = mon.bonus.num[bi];
+					var bonusNameSpan = bonusNum.appendChild(document.createElement("span"));
+					bonusNameSpan.className = "bouns-name";
+					bonusNameSpan.appendChild(document.createTextNode(bonusName[bi]));
+					var bonusNumSpan = bonusNum.appendChild(document.createElement("span"));
+					bonusNumSpan.className = bn>0?"bouns-positive":"bouns-negative";
+					bonusNumSpan.appendChild(document.createTextNode((bn>0?"+":"") + bn));
+				}
+			}else
+			{
+				bonusDetail.appendChild(document.createTextNode("不可绑定"));
 			}
 		})
 	})
