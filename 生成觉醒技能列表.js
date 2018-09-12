@@ -82,7 +82,7 @@ for (var r=0;r<table.rows.length;r++)
 }
 
 var outText = JSON.stringify(awokens);
-outText = outText.replace(/"(c?name|icon)"/igm,"$1");
+//outText = outText.replace(/"(c?name|icon)"/igm,"$1");
 //outText = outText.replace(/^\[(.+)\]$/igm,"[$1\n]");
 //outText = outText.replace(/{(.+?)}/igm,"\n{$1}");
 var jsonTextarea = document.querySelector(".jsonTextarea") || table.parentNode.insertBefore(document.createElement("textarea"),table);
