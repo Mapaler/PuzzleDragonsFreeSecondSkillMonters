@@ -41,6 +41,9 @@ function specialMonsterName(monid)
         case 3193:
             return "帝都之守护神・雅典娜";
             break;
+        case 4296:
+            return "帝国之守护神・雅典娜";
+            break;
         case 4576:
             return "水都之守护神・雅典娜";
             break;
@@ -73,6 +76,7 @@ function specialCharacterReplace(str)
         ["呪","咒"],
         ["経","经"],
         ["獣","兽"],
+        ["贰","二"],
         ["マグマ", "岩浆"],
         ["ブリザード", "暴雪"],
         ["ガイア", "盖亚"],
