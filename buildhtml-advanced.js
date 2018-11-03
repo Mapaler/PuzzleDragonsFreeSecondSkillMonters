@@ -145,7 +145,11 @@
 			mon.awokens.forEach(function(awoken){
 				var jxiconLink = cellJX.appendChild(document.createElement("a"));
 				jxiconLink.className = "awoken-link";
+				try{
 				jxiconLink.href = "http://pad.skyozora.com/skill/" + awokens[awoken].name;
+			}catch(e){
+					console.log(awoken)
+				}
 				jxiconLink.target = "_blank";
 				var awBox = jxiconLink.appendChild(document.createElement("div")); //珠子
 				awBox.className = "awoken";
