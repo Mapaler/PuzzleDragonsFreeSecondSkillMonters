@@ -38,7 +38,7 @@ function buildHTML(response)
 
 	mdata.forEach(function(mon){
 		if (specialMonsterName(mon.id)) //处理几个word转简体会出错的
-			mon.name = specialMonsterName(mon.id)
+			mon.cname = specialMonsterName(mon.id)
 		mon.name = specialCharacterReplace(mon.name);
 
 		var row1 = tb.insertRow();
