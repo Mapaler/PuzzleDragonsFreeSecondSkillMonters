@@ -15,4 +15,11 @@
   * **高级版本**  
   使用[Puzzle & Dragons Texture Tool](https://github.com/Mapaler/Puzzle-and-Dragons-Texture-Tool)解包图片文件。  
   `CARDS_XXX.PNG`图片包含的是怪物头像，需root手机，原始文件在`/data/data/jp.gungho.padHT/files/mon2`  
-  其他图片在APK安装包里，并且如果类型和觉醒发生变化，还需要对应的更新css代码。
+  其他图片在APK安装包里，并且如果类型和觉醒发生变化，还需要对应的更新css代码。# 智龙迷城免费二技宠列表 
+
+# 智龙迷城所有破吸收宠物列表 
+## 在线查看
+一个版本： https://mapaler.github.io/PuzzleDragonsFreeSecondSkillMonters/damage-absorption.html
+
+## 更新数据方式
+同上
