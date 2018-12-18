@@ -6,7 +6,8 @@ window.onload = function()
 		method: "GET",
 		url:"monsterLeaderSkill.json",
 		onload: function(response) {
-			buildHTML(response.response);
+			mdata = JSON.parse(response.response);
+			buildHTML(mdata);
 		},
 		onerror: function(response) {
 			console.error("数据获取错误",response);
@@ -17,9 +18,8 @@ window.onload = function()
 function PrefixInteger(num, length) {  
 	return (Array(length).join('0') + num).slice(-length); 
 }
-function buildHTML(response)
+function buildHTML(mdata)
 {
-	mdata = JSON.parse(response);
 	var tb = MainList.appendChild(document.createElement("table"));
 	var th = tb.createTHead();
 	var tRow1 = th.insertRow();
