@@ -1,6 +1,5 @@
-﻿function buildHTML(response)
+﻿function buildHTML(mdata)
 {
-	mdata = JSON.parse(response);
 	mdata.forEach(function(grp){
 		var grpTitle = MainList.appendChild(document.createElement("dt"));
 		grpTitle.appendChild(document.createTextNode(grp.name));

@@ -16,7 +16,8 @@ window.onload = function()
 		method: "GET",
 		url:"monsters.json",
 		onload: function(response) {
-			buildHTML(response.response);
+			mdata = JSON.parse(response.response);
+			buildHTML(mdata);
 		},
 		onerror: function(response) {
 			console.error("数据获取错误",response);
