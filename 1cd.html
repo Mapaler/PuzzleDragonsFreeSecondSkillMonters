@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智龙迷城（日服）技能1CD宠列表</title>
+<link rel="stylesheet" href="style.css" />
+<script src="universal_jsonobj.js" type="text/javascript"></script>
+<script src="universal_function.js" type="text/javascript"></script>
+<script src="buildhtml-advanced.js" type="text/javascript"></script>
+<script type="text/javascript">
+var MainList;
+window.onload = function()
+{
+	MainList = document.getElementById("monsters");
+	GM_xmlhttpRequest({
+		method: "GET",
+		url:"monsters-1cd.json",
+		onload: function(response) {
+			mdata = JSON.parse(response.response);
+			buildHTML(mdata);
+		},
+		onerror: function(response) {
+			console.error("数据获取错误",response);
+		}
+	})
+}
+</script>
+</head>
+<body>
+<div>
+  <audio controls="controls" loop="loop" >
+    <source src="sound/bgm_01.ogg" type="audio/ogg">
+  </audio>
+</div>
+<dl id="monsters"></dl>
+</body>
+</html>

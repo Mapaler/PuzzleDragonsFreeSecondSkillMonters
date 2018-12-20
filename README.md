@@ -23,3 +23,10 @@
 
 ## 更新数据方式
 同上
+
+# 智龙迷城1CD宠物列表 
+## 在线查看
+一个版本： https://mapaler.github.io/PuzzleDragonsFreeSecondSkillMonters/1cd.html
+
+## 更新数据方式
+同上
