@@ -11,6 +11,12 @@
 var MainList;
 window.onload = function()
 {
+	if (supportWebP) //支持WebP，切换到WebP的CSS
+	{
+		var webp_stylesheet = document.head.appendChild(document.createElement("link"));
+		webp_stylesheet.rel = "stylesheet";
+		webp_stylesheet.href = "style-webp.css";
+	}
 	MainList = document.getElementById("monsters");
 	GM_xmlhttpRequest({
 		method: "GET",
@@ -38,9 +44,9 @@ window.onload = function()
 </head>
 <body>
 <div>
-  <audio controls="controls" loop="loop" >
-    <source src="sound/bgm_01.ogg" type="audio/ogg">
-  </audio>
+	<audio controls="controls" loop="loop" >
+		<source src="sound/bgm_01.ogg" type="audio/ogg">
+	</audio>
 </div>
 <dl id="monsters"></dl>
 </body>

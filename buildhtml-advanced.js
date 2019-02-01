@@ -1,4 +1,14 @@
-﻿function buildHTML(mdata)
+﻿var supportWebP = check_support_webp();
+//判断是否支持webp格式图片 支持 返回true   不支持 返回false
+function check_support_webp() {
+    //通过UserAgent获取火狐浏览器的版本
+    var fxVer = /Firefox\/(\d+)(?:\.\d+)+/.exec(navigator.userAgent);
+    if (fxVer && fxVer[1]>=65)
+        return true;
+    else
+        return document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
+}
+function buildHTML(mdata)
 {
 	mdata.forEach(function(grp){
 		var grpTitle = MainList.appendChild(document.createElement("dt"));
@@ -24,10 +34,15 @@
 			lnk.target = "_blank";
 			lnk.alt = lnk.title = mon.name;
 			//怪物头像部分
-			var iconF1 = lnk.appendChild(document.createElement("div"));iconF1.className = "icon-link";
-			iconF1.style.backgroundImage = "url(images/cards/CARDS_" + PrefixInteger(Math.ceil(mon.id/100),3) + ".PNG)";
-			var position = iconPosition(mon.id);
-			iconF1.style.backgroundPosition = position.map(function(p){return p + "px";}).join(" ");
+			var iconF1 = lnk.appendChild(document.createElement("div"));
+			iconF1.className = "icon-link";
+			iconF1.classList.add("pet-cards-" + Math.ceil(mon.id/100)); //添加图片编号
+			var indexInThisPage = (mon.id-1) % 100; //获取当前页面的总序号
+			iconF1.classList.add("pet-cards-index-x-" + indexInThisPage % 10); //添加X方向序号
+			iconF1.classList.add("pet-cards-index-y-" + parseInt(indexInThisPage / 10)); //添加Y方向序号
+			//iconF1.style.backgroundImage = "url(images/cards/CARDS_" + PrefixInteger(Math.ceil(mon.id/100),3) + (supportWebP?".webp":".PNG") + ")";
+			//var position = iconPosition(mon.id);
+			//iconF1.style.backgroundPosition = position.map(function(p){return p + "px";}).join(" ");
 			//怪物主属性
 			var iconF2 = iconF1.appendChild(document.createElement("div"));iconF2.className = "property";
 			iconF2.classList.add("property-" + mon.property[0]);
