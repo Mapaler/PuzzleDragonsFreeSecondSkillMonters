@@ -47,7 +47,7 @@ function specialMonsterName(monid)
         case 4576:
             return "水都之守护神・雅典娜";
             break;
-        case 4172:
+/*        case 4172:
             return "猎人♂・灭尽龙 X 装备";
             break;
         case 4173:
@@ -56,7 +56,7 @@ function specialMonsterName(monid)
         case 4174:
             return "猎人♀・风漂龙X装备";
             break;
-        default:
+*/        default:
             return false;
     }
 }
