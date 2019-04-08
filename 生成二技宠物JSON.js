@@ -254,7 +254,6 @@ var monsterList = [
         4975, //武士喵
         4976, //武士喵的妖怪徽章
         5018, //言峰綺禮
-        5213, //天地壽
     ]},
     {group: "第三方合作（限时）：MP商店-怪物猎人装备",ids: [
         3705, //猎人♂・雄火龙X装备
@@ -524,11 +523,12 @@ function dealMonsterHTML(responseText) {
     }
     clearOldText();
     
-    monster.bonus = {lvtype:0,num:[0,0,0]}; //储存辅助同属性追加的数值BONUS
+    monster.bonus = null; //储存辅助同属性追加的数值BONUS
     var bonusCard = content.querySelector("table:nth-of-type(6)"); //bonus的卡
     var bonusList = bonusCard.rows[1].cells[0].querySelector("table"); //具体显示bonus的表格
     if (bonusList != undefined)
     {
+        monster.bonus = {lvtype:0,num:[0,0,0]}; //储存辅助同属性追加的数值BONUS
         var maxBonusLine = bonusList.rows[bonusList.rows.length - 1];
         if (/（LV110＆\+297時）/igm.test(maxBonusLine.cells[3].textContent))
         {
@@ -545,19 +545,22 @@ function dealMonsterHTML(responseText) {
 
     monster.awokens = []; //储存觉醒
     var jxCard = content.querySelector("table:nth-of-type(7)"); //觉醒
-    var jxList = jxCard.rows[0].cells[1].querySelectorAll("img");
-    for (var ji = 0; ji < jxList.length; ji++) {
-        var jximg = jxList[ji];
-        var jxIndex = -1;
-        awokens.some(function(awoken, index) {
-            if (awoken.icon == jximg.src) {
-                jxIndex = index;
-                return true;
-            }
-        })
-        monster.awokens.push(jxIndex);
-        if (jxIndex < 0)
-            console.error("未知的觉醒图片", jximg);
+    if (/覺醒技能/.test(jxCard.rows[0].cells[0].textContent))
+    {
+        var jxList = jxCard.rows[0].cells[1].querySelectorAll("img");
+        for (var ji = 0; ji < jxList.length; ji++) {
+            var jximg = jxList[ji];
+            var jxIndex = -1;
+            awokens.some(function(awoken, index) {
+                if (awoken.icon == jximg.src) {
+                    jxIndex = index;
+                    return true;
+                }
+            })
+            monster.awokens.push(jxIndex);
+            if (jxIndex < 0)
+                console.error("未知的觉醒图片", jximg);
+        }
     }
 
     return monster;
