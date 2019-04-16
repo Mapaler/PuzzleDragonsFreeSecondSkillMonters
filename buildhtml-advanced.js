@@ -67,7 +67,7 @@ function buildHTML(mdata)
 			cellType.className = "type";
 			mon.type.forEach(function(tp){
 				var typeDiv = cellType.appendChild(document.createElement("div")); //类型
-				typeDiv.className = "type-box";
+				typeDiv.className = "type-icon";
 				typeDiv.classList.add("type-" + tp);
 				typeDiv.title = types[tp].cname;
 			});
@@ -137,7 +137,7 @@ function buildHTML(mdata)
 						break;
 					case 4:
 						var awBox = cellSkillText.appendChild(document.createElement("div")); //珠子
-						awBox.className = "awoken";
+						awBox.className = "awoken-icon";
 						awBox.classList.add("awoken-" + ifo.index);
 						awBox.title = awokens[ifo.index].cname;
 						cellSkillText.appendChild(document.createTextNode(awBox.title + " "));
@@ -166,7 +166,7 @@ function buildHTML(mdata)
 				}
 				jxiconLink.target = "_blank";
 				var awBox = jxiconLink.appendChild(document.createElement("div")); //珠子
-				awBox.className = "awoken";
+				awBox.className = "awoken-icon";
 				awBox.classList.add("awoken-" + awoken);
 				awBox.title = awokens[awoken].cname;
 			})

@@ -46,25 +46,28 @@ var awokenCname = [ //对应的中文简称
 	"7c",
 	"5色破防",
 	"心追",
-	"全体HP强化",
-	"全体回复强化",
+	"全体HP",
+	"全体回复",
 	"破无效",
 	"武器觉醒",
-	"3x3心追",
+	"方块心追",
 	"5色溜",
 	"大防封",
 	"大手指",
 	"防云",
 	"防封条",
 	"大SB",
-	"8血以上强化",
-	"半血以下强化",
+	"满血强化",
+	"下半血强化",
 	"L盾",
 	"L解锁",
 	"10c",
 	"c珠",
 	"语音",
 	"奖励增加",
+    "HP-",
+	"攻击-",
+	"回复-",
 ]
 
 var table = document.querySelector("#wrapper > table:nth-of-type(3) table");
@@ -85,7 +88,7 @@ var outText = JSON.stringify(awokens);
 //outText = outText.replace(/"(c?name|icon)"/igm,"$1");
 //outText = outText.replace(/^\[(.+)\]$/igm,"[$1\n]");
 //outText = outText.replace(/{(.+?)}/igm,"\n{$1}");
-var jsonTextarea = document.querySelector(".jsonTextarea") || table.parentNode.insertBefore(document.createElement("textarea"),table);
-jsonTextarea.classList.add("jsonTextarea");
+var jsonTextarea = document.querySelector("#jsonTextarea") || table.parentNode.insertBefore(document.createElement("textarea"),table);
+jsonTextarea.id = ("jsonTextarea");
 jsonTextarea.value = outText;
-//console.log(outText);
+console.log(awokens);

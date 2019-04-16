@@ -460,249 +460,257 @@ img{
 .block-15 .blockCBlight,.block-15 .blockCBp{
     display:none;
 }
-/*觉醒*/
-.awoken,.type-box{ /*和类型*/
+/*觉醒和类型*/
+.awoken-icon,.type-icon{
 	display:inline-block;
 	width:32px;height:32px;
-    background-image: url(images/EGGS.PNG);
-	background-position: -518px -74px;
     vertical-align: middle;
+}
+/*觉醒*/
+.awoken-icon{
+    background-image: url(images/awoken.png);
 }
 .awoken-0{/*HP+*/
-	background-position: -610px -254px;
+	background-position: 0px -32px;
 }
 .awoken-1{/*攻击+*/
-	background-position: -610px -290px;
+	background-position: 0px -64px;
 }
 .awoken-2{/*回复+*/
-	background-position: -610px -326px;
+	background-position: 0px -96px;
 }
 .awoken-3{/*火盾*/
-	background-position: -610px -362px;
+	background-position: 0px -128px;
 }
 .awoken-4{/*水盾*/
-	background-position: -610px -398px;
+	background-position: 0px -160px;
 }
 .awoken-5{/*木盾*/
-	background-position: -610px -434px;
+	background-position: 0px -192px;
 }
 .awoken-6{/*光盾*/
-	background-position: -610px -470px;
+	background-position: 0px -224px;
 }
 .awoken-7{/*暗盾*/
-	background-position: -646px -110px;
+	background-position: 0px -256px;
 }
 .awoken-8{/*自回*/
-	background-position: -682px -110px;
+	background-position: 0px -288px;
 }
 .awoken-9{/*防封*/
-	background-position: -718px -110px;
+	background-position: 0px -320px;
 }
 .awoken-10{/*防暗*/
-	background-position: -754px -110px;
+	background-position: 0px -352px;
 }
 .awoken-11{/*防废*/
-	background-position: -790px -110px;
+	background-position: 0px -384px;
 }
 .awoken-12{/*防毒*/
-	background-position: -826px -110px;
+	background-position: 0px -416px;
 }
 .awoken-13{/*火+*/
-	background-position: -862px -110px;
+	background-position: 0px -448px;
 }
 .awoken-14{/*水+*/
-	background-position: -898px -110px;
+	background-position: 0px -480px;
 }
 .awoken-15{/*木+*/
-	background-position: -934px -110px;
+	background-position: 0px -512px;
 }
 .awoken-16{/*光+*/
-	background-position: -970px -110px;
+	background-position: 0px -544px;
 }
 .awoken-17{/*暗+*/
-	background-position: -646px -146px;
+	background-position: 0px -576px;
 }
 .awoken-18{/*手指*/
-	background-position: -646px -182px;
+	background-position: 0px -608px;
 }
 .awoken-19{/*心解*/
-	background-position: -646px -218px;
+	background-position: 0px -640px;
 }
 .awoken-20{/*SB*/
-	background-position: -646px -254px;
+	background-position: 0px -672px;
 }
 .awoken-21{/*火横*/
-	background-position: -646px -290px;
+	background-position: 0px -704px;
 }
 .awoken-22{/*水横*/
-	background-position: -646px -326px;
+	background-position: 0px -736px;
 }
 .awoken-23{/*木横*/
-	background-position: -646px -362px;
+	background-position: 0px -768px;
 }
 .awoken-24{/*光横*/
-	background-position: -646px -398px;
+	background-position: 0px -800px;
 }
 .awoken-25{/*暗横*/
-	background-position: -646px -434px;
+	background-position: 0px -832px;
 }
 .awoken-26{/*U*/
-	background-position: -646px -470px;
+	background-position: 0px -864px;
 }
 .awoken-27{/*SX*/
-	background-position: -682px -146px;
+	background-position: 0px -896px;
 }
 .awoken-28{/*心+*/
-	background-position: -718px -146px;
+	background-position: 0px -928px;
 }
 .awoken-29{/*协力*/
-	background-position: -754px -146px;
+	background-position: 0px -960px;
 }
 .awoken-30{/*龙杀*/
-	background-position: -790px -146px;
+	background-position: 0px -992px;
 }
 .awoken-31{/*神杀*/
-	background-position: -826px -146px;
+	background-position: 0px -1024px;
 }
 .awoken-32{/*恶魔杀*/
-	background-position: -862px -146px;
+	background-position: 0px -1056px;
 }
 .awoken-33{/*机杀*/
-	background-position: -898px -146px;
+	background-position: 0px -1088px;
 }
 .awoken-34{/*平衡杀*/
-	background-position: -934px -146px;
+	background-position: 0px -1120px;
 }
 .awoken-35{/*攻击杀*/
-	background-position: -970px -146px;
+	background-position: 0px -1152px;
 }
 .awoken-36{/*体力杀*/
-	background-position: -682px -182px;
+	background-position: 0px -1184px;
 }
 .awoken-37{/*回复杀*/
-	background-position: -682px -218px;
+	background-position: 0px -1216px;
 }
 .awoken-38{/*进化杀*/
-	background-position: -682px -254px;
+	background-position: 0px -1248px;
 }
 .awoken-39{/*觉醒杀*/
-	background-position: -682px -290px;
+	background-position: 0px -1280px;
 }
 .awoken-40{/*强化杀*/
-	background-position: -682px -326px;
+	background-position: 0px -1312px;
 }
 .awoken-41{/*卖钱杀*/
-	background-position: -682px -362px;
+	background-position: 0px -1344px;
 }
 .awoken-42{/*7c*/
-	background-position: -682px -398px;
+	background-position: 0px -1376px;
 }
 .awoken-43{/*5色破防*/
-	background-position: -682px -434px;
+	background-position: 0px -1408px;
 }
 .awoken-44{/*心追*/
-	background-position: -682px -470px;
+	background-position: 0px -1440px;
 }
-.awoken-45{/*全体HP强化*/
-	background-position: -718px -182px;
+.awoken-45{/*全体HP*/
+	background-position: 0px -1472px;
 }
-.awoken-46{/*全体回复强化*/
-	background-position: -754px -182px;
+.awoken-46{/*全体回复*/
+	background-position: 0px -1504px;
 }
 .awoken-47{/*破无效*/
-	background-position: -790px -182px;
+	background-position: 0px -1536px;
 }
 .awoken-48{/*武器觉醒*/
-	background-position: -826px -182px;
+	background-position: 0px -1568px;
 }
-.awoken-49{/*3x3心追*/
-	background-position: -862px -182px;
+.awoken-49{/*方块心追*/
+	background-position: 0px -1600px;
 }
 .awoken-50{/*5色溜*/
-	background-position: -898px -182px;
+	background-position: 0px -1632px;
 }
 .awoken-51{/*大防封*/
-	background-position: -934px -182px;
+	background-position: 0px -1664px;
 }
 .awoken-52{/*大手指*/
-	background-position: -970px -182px;
+	background-position: 0px -1696px;
 }
 .awoken-53{/*防云*/
-	background-position: -718px -218px;
+	background-position: 0px -1728px;
 }
 .awoken-54{/*防封条*/
-	background-position: -718px -254px;
+	background-position: 0px -1760px;
 }
 .awoken-55{/*大SB*/
-	background-position: -718px -290px;
+	background-position: 0px -1792px;
 }
-.awoken-56{/*8血以上强化*/
-	background-position: -718px -326px;
+.awoken-56{/*满血强化*/
+	background-position: 0px -1824px;
 }
-.awoken-57{/*半血以下强化*/
-	background-position: -718px -362px;
+.awoken-57{/*下半血强化*/
+	background-position: 0px -1856px;
 }
 .awoken-58{/*L盾*/
-	background-position: -718px -398px;
+	background-position: 0px -1888px;
 }
 .awoken-59{/*L解锁*/
-	background-position: -718px -434px;
+	background-position: 0px -1920px;
 }
 .awoken-60{/*10c*/
-	background-position: -718px -470px;
+	background-position: 0px -1952px;
 }
 .awoken-61{/*c珠*/
-	background-position: -754px -218px;
+	background-position: 0px -1984px;
 }
 .awoken-62{/*语音*/
-	background-position: -790px -218px;
+	background-position: 0px -2016px;
 }
 .awoken-63{/*奖励增加*/
-	background-position: -826px -218px;
+	background-position: 0px -2048px;
+}
+.awoken-64{/*HP-*/
+	background-position: 0px -2080px;
+}
+.awoken-65{/*攻击-*/
+	background-position: 0px -2112px;
+}
+.awoken-66{/*回复-*/
+	background-position: 0px -2144px;
 }
 /*类型*/
-.type-box{
-	display:inline-block;
-	width:32px;height:32px;
-	background-position: -766px -110px;
-    vertical-align: middle;
+.type-icon{
+    background-image: url(images/type.png);
 }
 .type-0{/*龙*/
-	background-position: -770px -74px;
+	background-position: 0px 0px;
 }
 .type-1{/*神*/
-	background-position: -806px -74px;
+	background-position: 0px -32px;
 }
 .type-2{/*恶魔*/
-	background-position: -878px -74px;
+	background-position: 0px -64px;
 }
 .type-3{/*机械*/
-	background-position: -914px -74px;
+	background-position: 0px -96px;
 }
 .type-4{/*平衡*/
-	background-position: -458px -418px;
+	background-position: 0px -128px;
 }
 .type-5{/*攻击*/
-	background-position: -842px -74px;
+	background-position: 0px -160px;
 }
 .type-6{/*体力*/
-	background-position: -974px -38px;
+	background-position: 0px -192px;
 }
 .type-7{/*回复*/
-	background-position: -734px -74px;
+	background-position: 0px -224px;
 }
 .type-8{/*进化用*/
-	background-position: -458px -378px;
+	background-position: 0px -256px;
 }
 .type-9{/*能力觉醒用*/
-	background-position: -950px -74px;
+	background-position: 0px -288px;
 }
 .type-10{/*强化合成用*/
-	background-position: -574px -110px;
+	background-position: 0px -320px;
 }
 .type-11{/*贩卖用*/
-	background-position: -574px -146px;
+	background-position: 0px -352px;
 }
 .type-12{/*特殊*/
-	background-position: -986px -74px;
+	background-position: 0px -384px;
 }

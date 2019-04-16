@@ -4,7 +4,7 @@ window.onload = function()
 	MainList = document.getElementById("monsters");
 	GM_xmlhttpRequest({
 		method: "GET",
-		url:"monsterLeaderSkill.json",
+		url:"monsters-LeaderSkill.json",
 		onload: function(response) {
 			mdata = JSON.parse(response.response);
 			buildHTML(mdata);

@@ -1,7 +1,4 @@
-﻿body{
-	background-image: url(images/bg.webp);
-}
-.pet-cards-1{background-image: url(images/cards/CARDS_001.webp);}
+﻿.pet-cards-1{background-image: url(images/cards/CARDS_001.webp);}
 .pet-cards-2{background-image: url(images/cards/CARDS_002.webp);}
 .pet-cards-3{background-image: url(images/cards/CARDS_003.webp);}
 .pet-cards-4{background-image: url(images/cards/CARDS_004.webp);}
@@ -112,6 +109,9 @@
 .block-1 .blockCBlight,.block-3 .blockCBlight,.block-5 .blockCBlight,.block-7 .blockCBlight,.block-9 .blockCBlight,.block-11 .blockCBlight{
     mask-image: url(images/BLOCK2.webp);
 }
-.awoken,.type-box{
-    background-image: url(images/EGGS.webp);
+.awoken-icon{
+    background-image: url(images/awoken.webp);
+}
+.type-icon{
+    background-image: url(images/type.webp);
 }
