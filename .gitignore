@@ -1,3 +1,2 @@
-/aria2c.exe
-/*.down
-/images/*.exe
+*.exe
+*.down
