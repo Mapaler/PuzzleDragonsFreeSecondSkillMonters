@@ -198,6 +198,9 @@ var monsterList = [
     {group: "第三方合作-筋肉人（限时）：降临",ids: [
         3864, //筋肉族超人预言书
     ]},
+    {group: "第三方合作-筋肉人（限时）：宠物交换所",ids: [
+        5309, //亞歷山大・米特
+    ]},
     {group: "第三方合作-Duel Masters（限时）：降临",ids: [
         3990, //切札胜舞的特别牌组
     ]},
@@ -355,6 +358,9 @@ var monsterList = [
     {group: "第三方合作-通灵王（限时）：MP商店",ids: [
         5268, //道潤
         5269, //玉村玉緒
+    ]},
+    {group: "第三方合作-SANRIO（限时）：宠物交换所",ids: [
+        5296, //Hello Kitty 的緞帶
     ]},
     {group: "第三方合作-SANRIO（限时）：宠物交换所",ids: [
         5296, //Hello Kitty 的緞帶
