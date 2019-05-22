@@ -362,9 +362,6 @@ var monsterList = [
     {group: "第三方合作-SANRIO（限时）：宠物交换所",ids: [
         5296, //Hello Kitty 的緞帶
     ]},
-    {group: "第三方合作-SANRIO（限时）：宠物交换所",ids: [
-        5296, //Hello Kitty 的緞帶
-    ]},
     {group: "雷达：雷达龙降临",ids: [
         5176, //薫風的寵物晶片
         5178, //雲瑪的寵物晶片
