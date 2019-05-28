@@ -1,10 +1,16 @@
-﻿body{
+﻿.gamebg{
 	background-image: url(images/bg.jpg);
 	background-attachment: fixed;
 	background-position: center;
 	background-size: 100%;
 	color:white;
     text-shadow: 0 0 3px black;
+}
+.gamebg table{
+	background: rgba(200,200,200,0.4);
+}
+.gamebg .link{
+	color: white;
 }
 dt{
 	font-size: 2em;
@@ -21,12 +27,8 @@ dl dt:first-child
 }
 table{
 	width: 100%;
-	background: rgba(200,200,200,0.4);
 	border-bottom: 3px solid brown;
 	border-collapse:collapse;
-}
-.jump{
-	color: white;
 }
 .icon,.id,.rare,.type,.skill-name,.skill-cd,.jx,.bonus{
 	border-top: 3px solid brown;

@@ -25,22 +25,11 @@ window.onload = function()
 	})
 }
 </script>
-<style type="text/css">
-body{
-	background: unset;
-	color:unset;
-    text-shadow: unset;
-}
-table{
-	background: unset;
-}
-.jump{
-	color: unset;
-}
-</style>
 </head>
-<body>
-<div><a href="advanced.html" class="jump" target="_blank">跳转到高级版</a></div>
+<body class="gamebg">
+<div><a href="advanced.html" class="link" target="_blank">跳转到高级版</a>
+	<button onclick="document.body.classList.toggle('gamebg');">切换简单/游戏背景</button>
+</div>
 <dl id="monsters"></dl>
 </body>
 </html>

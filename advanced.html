@@ -32,11 +32,12 @@ window.onload = function()
 }
 </script>
 </head>
-<body>
+<body class="gamebg">
 <div>
 	<audio controls="controls" loop="loop" >
 		<source src="sound/bgm_01.ogg" type="audio/ogg">
 	</audio>
+	<button onclick="document.body.classList.toggle('gamebg');">切换简单/游戏背景</button>
 </div>
 <dl id="monsters"></dl>
 </body>
