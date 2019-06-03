@@ -17,6 +17,16 @@ window.onload = function()
 		url:"monsters.json",
 		onload: function(response) {
 			mdata = JSON.parse(response.response);
+			mdata.some(function(g){ //每个组
+				return g.mosters.some(function(m){ //每个宠
+					if (m.id == 5271) //猫又全宗
+					{
+						m.skill.text[0].text = m.skill.text[0].text.replace("当前的0%","1"); //CD最小值变为和最大值一样
+						return true;
+					}
+				});
+			})
+
 			buildHTML(mdata);
 		},
 		onerror: function(response) {
